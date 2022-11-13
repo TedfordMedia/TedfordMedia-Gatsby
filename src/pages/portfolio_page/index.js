@@ -6,10 +6,10 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Layout from "@components/Layout";
 import styled from "@emotion/styled";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../mystyling.scss";
 import { useTheme } from "@components/Theming";
 import Image from "gatsby-image";
 
+import "../mystyling.scss";
 const StyledLink = styled((props) => <Link {...props} />)`
   color: black;
   text-decoration: none;
@@ -26,12 +26,25 @@ export default function Index({ data: { site, allMdx } }) {
   return (
     <Layout noSubscribeForm site={site}>
       <Container>
-        <div className="portfolioheader"/>
+        <div className="portfolioheader" />
         <Row>
           {allMdx.edges.map(({ node: post }) => (
             <Col key={post.id} lg={6}>
-              <Card className="mycardpart mb-2 mt-2">
-                <Card.Body className="mycardbody">
+              <Card
+                className="mb-2 mt-2 mycardpart"
+                css={css`
+                  border-radius: 15px;
+                  padding: 0px;
+                  background-color: #edf2f6;
+                `}
+              >
+                <Card.Body
+                  className="mycardbody"
+                  css={css`
+                    border-radius: 15px;
+                    padding: 0px;
+                  `}
+                >
                   {post.frontmatter.banner && (
                     <Link
                       aria-label={`View ${post.frontmatter.title} article`}
