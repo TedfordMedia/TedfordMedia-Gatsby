@@ -1,5 +1,5 @@
 $color-mainfordiv: #edf2f6;
- .picker {
+.picker {
   position: absolute !important;
   top: 74px;
   left: 70px;
@@ -11,51 +11,50 @@ $color-mainfordiv: #edf2f6;
   transform: rotateY(180deg);
 }
 
-.portfolioheader{ 
-    padding: 1em;
-    padding-top: .5em;
+.portfolioheader {
+  padding: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 50px;
 }
 
-.mycardpart{
-    -moz-box-shadow: 10px 10px 5px #ccc;
-    -webkit-box-shadow: 10px 10px 5px #ccc;
-    box-shadow: 10px 10px 5px #ccc;
-    -moz-border-radius:20;
-    -webkit-border-radius:20px;
-    border-radius:15px;
-    padding-bottom:1em;
-    background-color: $color-mainfordiv;
+.mycardpart {
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  box-shadow: 10px 10px 5px #ccc;
+  -moz-border-radius: 20;
+  -webkit-border-radius: 20px;
+  border-radius: 15px;
+  padding-bottom: 1em;
+  background-color: $color-mainfordiv;
 }
- 
-.mypoint{
-    cursor: pointer;
 
+.mypoint {
+  cursor: pointer;
 }
-.myroww{
+.myroww {
   position: absolute;
   top: 60%;
   z-index: 99999;
 }
-.mycardbottombit{
-  padding-left: 16px; 
-  padding-right: 16px; 
-
+.mycardbottombit {
+  padding-left: 16px;
+  padding-right: 16px;
 }
-.card-text{
-  min-height:77px;
-}
-
-.mytoppadding{
-  padding-top: 16px; 
-    font-size: 26px;
+.card-text {
+  min-height: 77px;
 }
 
-.mycardbody{
-  padding:0;
+.mytoppadding {
+  padding-top: 16px;
+  font-size: 26px;
 }
- 
-.zthecard_image{
-  -moz-border-radius:15px 15px 0px 0px ;
-  -webkit-border-radius:15px 15px 0px 0px ;
-  border-radius:15px 15px 0px 0px ;
+
+.mycardbody {
+  padding: 0;
+}
+
+.zthecard_image {
+  -moz-border-radius: 15px 15px 0px 0px;
+  -webkit-border-radius: 15px 15px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
 }
