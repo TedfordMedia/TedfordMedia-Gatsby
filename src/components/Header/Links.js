@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 import { useTheme } from "../Theming";
-import ThemeToggler from "./ThemeToggler";
+import { css } from '@emotion/core'
+import { navigate } from "gatsby"
 
 export default () => {
   const theme = useTheme();

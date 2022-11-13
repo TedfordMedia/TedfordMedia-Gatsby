@@ -1,18 +1,18 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import { MDXProvider } from '@mdx-js/react'
-import { lighten } from 'polished'
-import { Global, css } from '@emotion/core'
-import { ThemeProvider, themes } from './Theming'
-import { bpMaxSM } from '../lib/breakpoints'
-import mdxComponents from './mdx'
-import Header from './Header'
-import reset from '../lib/reset'
-import { fonts } from '../lib/typography'
-import config from '../../config/website'
-import Footer from '../components/Footer' 
-const getGlobalStyles = theme => {
+import React, { Fragment, useState, useEffect } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
+import { lighten } from "polished";
+import { Global, css } from "@emotion/core";
+import { ThemeProvider, themes } from "./Theming";
+import { bpMaxSM } from "../lib/breakpoints";
+import mdxComponents from "./mdx";
+import Header from "./Header";
+import reset from "../lib/reset";
+import { fonts } from "../lib/typography";
+import config from "../../config/website";
+import Footer from "../components/Footer";
+const getGlobalStyles = (theme) => {
   return css`
     body {
       background: ${theme.colors.bodyBg};
@@ -127,8 +127,8 @@ const getGlobalStyles = theme => {
         border-radius: 5px;
       }
     }
-  `
-}
+  `;
+};
 
 export default ({
   site,
@@ -138,36 +138,36 @@ export default ({
   noSubscribeForm,
 }) => {
   const initializeTheme = () => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'default'
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "default";
     } else {
-      return 'default'
+      return "default";
     }
-  }
+  };
 
-  const [themeName, setTheme] = useState(initializeTheme)
+  const [themeName, setTheme] = useState(initializeTheme);
 
   useEffect(() => {
-    localStorage.setItem('theme', themeName)
-  }, [themeName])
+    localStorage.setItem("theme", themeName);
+  }, [themeName]);
 
-  const toggleTheme = name => setTheme(name)
+  const toggleTheme = (name) => setTheme(name);
   const theme = {
     ...themes[themeName],
     toggleTheme: toggleTheme,
-  }
+  };
   const {
     description: siteDescription,
     keywords: siteKeywords,
-  } = site.siteMetadata
+  } = site.siteMetadata;
 
   const {
     keywords: frontmatterKeywords,
     description: frontmatterDescription,
-  } = frontmatter
+  } = frontmatter;
 
-  const keywords = (frontmatterKeywords || siteKeywords).join(', ')
-  const description = frontmatterDescription || siteDescription
+  const keywords = (frontmatterKeywords || siteKeywords).join(", ");
+  const description = frontmatterDescription || siteDescription;
 
   return (
     <ThemeProvider theme={theme}>
@@ -176,17 +176,15 @@ export default ({
         <Global styles={getGlobalStyles(theme)} />
         <div
           css={css`
-            
             width: 100%;
-         
-       height: calc(100% - 82.73px);
+            height: calc(100% - 72px);
           `}
         >
           <Helmet
             title={config.siteTitle}
             meta={[
-              { name: 'description', content: description },
-              { name: 'keywords', content: keywords },
+              { name: "description", content: description },
+              { name: "keywords", content: keywords },
             ]}
           >
             <html lang="en" />
@@ -205,8 +203,8 @@ export default ({
         </div>
       </Fragment>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   fragment site on Site {
@@ -219,4 +217,4 @@ export const pageQuery = graphql`
       keywords
     }
   }
-`
+`;
