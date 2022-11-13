@@ -40,7 +40,6 @@ export default function Index({ data: { site, allMdx } }) {
                   font-size: 38px;
                   color: ${theme.colors.headerBg};
                 `}>
-                  Portfolio
                 </h2>   
             </div>
             <Row>  
