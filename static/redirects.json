@@ -1,0 +1,10 @@
+[
+	{
+		 "fromPath": "/blog/recipes/mouthwatering-lasagna",
+		 "toPath": "/recipes/mouthwatering-lasagna"
+	},
+	{
+		 "fromPath": "/blog/recipes/*",
+		 "toPath": "/recipes/"
+	}
+]

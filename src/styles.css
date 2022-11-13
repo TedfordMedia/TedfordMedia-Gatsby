@@ -1,0 +1,36 @@
+.label{
+background: white;
+}
+.labeldiv{
+    color: rgb(75, 75, 146);
+    background-color: azure; 
+    /* cursor: pointer; */
+    font-size: 1.1em;
+    border-radius: 24px; 
+    min-width:160px;
+    border: none; 
+    padding: 5px 13px 5px 13px;
+    /* cursor: pointer; */
+    border: 3px solid rgb(105, 105, 105);
+    transition: all 150ms;
+    
+}
+
+html, body, #___gatsby {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+.mycolor{
+background-color: azure;
+}
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+.mydiv {
+    height: 100%;
+    overflow: hidden;
+}

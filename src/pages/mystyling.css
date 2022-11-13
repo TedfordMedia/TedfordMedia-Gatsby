@@ -1,0 +1,34 @@
+.portfolioheader {
+  padding: 1em;
+  padding-top: .5em;
+}
+
+.mycardpart {
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  box-shadow: 10px 10px 5px #ccc;
+  border-radius: 15px;
+  padding-bottom: 1em;
+  background-color: #edf2f6;
+}
+
+.mypoint {
+  cursor: pointer;
+}
+
+.mycardbottombit {
+  padding-left: 16px;
+}
+
+.mytoppadding {
+  padding-top: 16px;
+  font-size: 26px;
+}
+
+.mycardbody {
+  padding: 0;
+}
+
+.zthecard_image {
+  border-radius: 15px 15px 0px 0px;
+}
+/*# sourceMappingURL=mystyling.css.map */
