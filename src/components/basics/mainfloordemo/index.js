@@ -1,46 +1,11 @@
-import React, { useFrame, useRef, Suspense } from "react";
-import { OrbitControls, Html } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import React, { useMemo, Suspense } from "react";
+import { OrbitControls, Html, Plane } from "@react-three/drei";
+import { Canvas, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-// import EnvSingleCouple from "@helpers/Env_SwankyOffice5.js";
 
-function Dolighting({ brightness, color }) {
-  return (
-    <group name="lighting">
-      <hemisphereLight intensity={0.1} />
-      <directionalLight
-        position={[67, 19, 127]}
-        intensity={0.4}
-        castShadow
-        shadow-camera-zoom={2}
-      />
-      <directionalLight
-        position={[67, 30, 50]}
-        intensity={0.2}
-        castShadow
-        shadow-camera-zoom={2}
-      />
-      <directionalLight
-        position={[-57, 30, 40]}
-        intensity={0.2}
-        castShadow
-        shadow-camera-zoom={2}
-      />
-    </group>
-  );
-}
-// function Building() {
-//   const gltf = useLoader(
-//     GLTFLoader,
-//     "@models/singlelivingroom/Environment_SingleCouple.gltf"
-//   );
-//   return (
-//     <Suspense fallback={null}>
-//       <primitive object={gltf.scene} />
-//     </Suspense>
-//   );
-// }
+import Floor15 from "@components/floorpart/Floor15";
+import Floor from "@components/basics/flooring/Floor";
+import SimpleLighting from "@components/basics/lighting/SimpleLighting";
 
 const MainFloorDemo = ({ props }) => (
   <Canvas
@@ -49,7 +14,7 @@ const MainFloorDemo = ({ props }) => (
     shadows
     gl={{ alpha: false }}
     camera={{
-      position: [-3, 1.1, 4.5],
+      position: [-3, 10, 30.5],
       fov: 30,
       near: 0.01,
       far: 3000,
@@ -58,15 +23,18 @@ const MainFloorDemo = ({ props }) => (
       gl.outputEncoding = THREE.sRGBEncoding;
       gl.shadowMap.enabled = true;
       gl.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      const fogColor = new THREE.Color(0xffffff);
+      scene.background = fogColor;
+      scene.fog = new THREE.Fog(fogColor, 0.0025, 80);
+      gl.setPixelRatio(window.devicePixelRatio);
     }}
   >
-    <Dolighting />
-    <mesh position={[0, 0, 0]}>
-      <boxBufferGeometry args={[1, 1, 1]} attach="geometry" />
-      <meshPhongMaterial attach="material" />
-    </mesh>
+    <SimpleLighting />
+    <Floor />
+
     <Suspense fallback={<Html></Html>}>
-      {/* <EnvSingleCouple /> */}
+      <Floor15 />
     </Suspense>
     <OrbitControls target={[0, 0, 0]} />
   </Canvas>
