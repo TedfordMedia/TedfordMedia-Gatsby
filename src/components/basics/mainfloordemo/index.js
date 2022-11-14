@@ -3,7 +3,7 @@ import { OrbitControls, Html, Plane } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
-import Floor15 from "@components/floorpart/Floor15";
+// import Floor15 from "@components/floorpart/Floor15";
 import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
 
@@ -34,7 +34,7 @@ const MainFloorDemo = ({ props }) => (
     <Floor />
 
     <Suspense fallback={<Html></Html>}>
-      <Floor15 />
+      {/* <Floor15 /> */}
     </Suspense>
     <OrbitControls target={[0, 0, 0]} />
   </Canvas>
