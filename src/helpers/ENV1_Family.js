@@ -7,7 +7,14 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/models/singlelivingroomb/ENV1_Family.gltf')
+  const { nodes, materials } = useGLTF(function Scene() {
+  const gltf = useLoader(GLTFLoader, '/Poimandres.gltf')
+  return (
+    <Suspense fallback={null}>
+      <primitive object={gltf.scene} />
+    </Suspense>
+  )
+})
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="ENV1_Family">
