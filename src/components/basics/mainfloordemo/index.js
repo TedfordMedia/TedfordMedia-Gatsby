@@ -2,48 +2,10 @@ import React, { useMemo, Suspense } from "react";
 import { OrbitControls, Html, Plane } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import GenTools from "/src/GenTools";
 
-function Dolighting({ brightness, color }) {
-  return (
-    <group name="lighting">
-      <hemisphereLight intensity={0.1} />
-      <directionalLight
-        shadow-mapSize-height={1024}
-        shadow-mapSize-width={1024}
-        shadow-radius={3}
-        shadow-bias={-0.0001}
-        //  shadow-camera-far={50}
-        //       shadow-camera-left = {-10}
-        //       shadow-camera-right = {10}
-        //       shadow-camera-top = {10}
-        //       shadow-camera-bottom = {-10}
-        position={[67, 19, 127]}
-        intensity={1}
-        castShadow
-        shadow-camera-zoom={2}
-      />
-    </group>
-  );
-}
-function Building() {
-  const { scene } = useLoader(GLTFLoader, "/models/fl15.glb");
-
-  useMemo(
-    () =>
-      scene.traverse((obj) => {
-        GenTools.basicTraverse(obj);
-      }),
-    [scene]
-  );
-
-  return (
-    <Suspense fallback={null}>
-      <primitive scale={[0.1, 0.1, 0.1]} object={scene} />
-    </Suspense>
-  );
-}
+import Floor15 from "@components/floorpart/Floor15";
+import Floor from "@components/basics/flooring/Floor";
+import SimpleLighting from "@components/basics/lighting/SimpleLighting";
 
 const MainFloorDemo = ({ props }) => (
   <Canvas
@@ -68,18 +30,11 @@ const MainFloorDemo = ({ props }) => (
       gl.setPixelRatio(window.devicePixelRatio);
     }}
   >
-    <Dolighting />
-    {/* Floor */}
-    <Plane
-      receiveShadow
-      args={[100, 100]}
-      rotation={[-Math.PI / 2, 0, 0]}
-      position={[0, -0.2, 0]}
-    >
-      <meshPhongMaterial attach="material" color={"#ededed"} />
-    </Plane>
+    <SimpleLighting />
+    <Floor />
+
     <Suspense fallback={<Html></Html>}>
-      <Building />
+      <Floor15 />
     </Suspense>
     <OrbitControls target={[0, 0, 0]} />
   </Canvas>
