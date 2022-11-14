@@ -8,7 +8,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
  
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/samba.glb')
+  const { nodes, materials, animations } = useGLTF('/models/samba.glb')
 
   const { actions } = useAnimations(animations, group)
  
@@ -36,4 +36,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/samba.glb')
+useGLTF.preload('/models/samba.glb')

@@ -105,7 +105,7 @@ function getFragmentShader() {
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF(
-    "/models/Env_SwankyOffice5/Env_SwankyOffice.gltf"
+    "/models/Env_SwankyOffice5/Env_SwankyOffice.glb"
   );
 
   const { scene } = useThree();
