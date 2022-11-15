@@ -1,11 +1,11 @@
-import React, { useMemo, Suspense } from "react";
-import { OrbitControls, Html, Plane } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import React, { Suspense } from "react";
+import { OrbitControls, Html } from "@react-three/drei";
+import { Canvas, extend, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-
-// import Floor15 from "@components/basics/floorpart/Floor15";
+import Floor15 from "@components/floorpart/Floor15";
 import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
+
 
 const MainFloorDemo = ({ props }) => (
   <Canvas
@@ -14,7 +14,7 @@ const MainFloorDemo = ({ props }) => (
     shadows
     gl={{ alpha: false }}
     camera={{
-      position: [-3, 10, 30.5],
+      position: [-3, 6, 6.5],
       fov: 30,
       near: 0.01,
       far: 3000,
@@ -23,6 +23,8 @@ const MainFloorDemo = ({ props }) => (
       gl.outputEncoding = THREE.sRGBEncoding;
       gl.shadowMap.enabled = true;
       gl.shadowMap.type = THREE.PCFSoftShadowMap;
+      // gl.shadowMap.autoUpdate = true;
+      // gl.toneMapping = THREE.ACESFilmicToneMapping;
 
       const fogColor = new THREE.Color(0xffffff);
       scene.background = fogColor;
@@ -33,10 +35,10 @@ const MainFloorDemo = ({ props }) => (
     <SimpleLighting />
     <Floor />
 
-    <Suspense fallback={<Html></Html>}>
-      {/* <Floor15 /> */}
+    <Suspense fallback={<Html>loading</Html>}>
+      <Floor15 />
     </Suspense>
-    <OrbitControls target={[0, 0, 0]} />
+    <OrbitControls target={[0, 0, 0]} enableDamping dampingFactor={0.05} /> 
   </Canvas>
 );
 

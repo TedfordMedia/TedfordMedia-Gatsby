@@ -358,14 +358,42 @@ function GenTools() {
     envMap.format = THREE.RGBFormat;
     envMap.mapping = THREE.CubeReflectionMapping;
     envMap.encoding = THREE.sRGBEncoding;
-    this.envMap = envMap;
+    return envMap;
+  };
+  this.applyGlass = function(gltf) {
+    const envMap = this.setEnvMap();
+
+    let glassMaterial = new THREE.MeshPhysicalMaterial({
+      metalness: 1,
+      roughness: 0,
+      clearcoat: 0.5,
+      transmission: 1,
+      specularIntensity: 0.5,
+      envMap: envMap,
+      sheen: 0.5,
+      clearcoatRoughness: 0.1,
+      color: "#5565a0",
+      reflectivity: 1,
+      ior: 1,
+      DoubleSide: true,
+      // thickness: 0.5, // Add refraction!
+    });
+    gltf.traverse((child) => {
+      if (
+        child.isMesh === true &&
+        child.material?.name.toLowerCase().includes("glass")
+      ) {
+        console.log("child.material.name:", child.material.name);
+        child.material = glassMaterial;
+      }
+    });
   };
   this.basicTraverse = function(gltf) {
     gltf.traverse((child) => {
       if (child.isMesh === true) {
         child.frustumCulled = false;
         child.castShadow = true;
-        child.receiveShadow = true; 
+        child.receiveShadow = true;
       }
     });
   };
