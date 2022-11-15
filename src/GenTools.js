@@ -369,13 +369,13 @@ function GenTools() {
       clearcoat: 0.5,
       transmission: 1,
       specularIntensity: 0.5,
-      envMap: envMap,
+      // envMap: envMap,
       sheen: 0.5,
       clearcoatRoughness: 0.1,
       color: "#5565a0",
-      reflectivity: 1,
+      reflectivity: 0,
       ior: 1,
-      DoubleSide: true,
+      side: THREE.DoubleSide,
       // thickness: 0.5, // Add refraction!
     });
     gltf.traverse((child) => {

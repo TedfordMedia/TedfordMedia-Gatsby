@@ -4,8 +4,10 @@ import GenTools from "/src/GenTools";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
+
 function Floor15() {
   const { scene } = useLoader(GLTFLoader, "/models/fl15.glb");
+
 
   useEffect(() => {
     GenTools.basicTraverse(scene);

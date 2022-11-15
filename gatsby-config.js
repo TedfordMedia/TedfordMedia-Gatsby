@@ -1,9 +1,9 @@
-const config = require('./config/website')
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+const config = require("./config/website");
+const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -12,7 +12,7 @@ module.exports = {
     title: config.siteTitle,
     twitterHandle: config.twitterHandle,
     description: config.siteDescription,
-    keywords: ['Video Blogger'],
+    keywords: ["Video Blogger"],
     canonicalUrl: config.siteUrl,
     image: config.siteLogo,
     author: {
@@ -28,23 +28,23 @@ module.exports = {
     },
     social: {
       twitter: config.twitterHandle,
-      fbAppID: '',
+      fbAppID: "",
     },
   },
   plugins: [
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     `gatsby-plugin-mdx-embed`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/blog`,
-        name: 'blog',
+        name: "blog",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images', 
+        name: "images",
         path: `${__dirname}/src/images`,
       },
     },
@@ -53,31 +53,31 @@ module.exports = {
       options: {
         force: true,
         isPermanent: true,
-      redirectInBrowser: true,
+        redirectInBrowser: true,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md', '.markdown'],
+        extensions: [".mdx", ".md", ".markdown"],
         gatsbyRemarkPlugins: [
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
-              backgroundColor: '#fafafa',
+              backgroundColor: "#fafafa",
               maxWidth: 1035,
             },
           },
         ],
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
@@ -85,19 +85,19 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'standalone',
+        display: "standalone",
         icon: "static/favicon.png",
-        
+
         icons: [
           {
-            src: '/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: '/android-chrome-512x512 copy.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "/android-chrome-512x512 copy.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },
@@ -126,14 +126,14 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.fields.date,
-                  url: site.siteMetadata.siteUrl + '/' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + '/' + edge.node.fields.slug,
-                })
-              })
+                  url: site.siteMetadata.siteUrl + "/" + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + "/" + edge.node.fields.slug,
+                });
+              });
             },
             query: `
               {
@@ -157,10 +157,18 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
-            title: 'Blog RSS Feed',
+            output: "/rss.xml",
+            title: "Blog RSS Feed",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+           include: /images\/.*\.svg/,
+        },
       },
     },
     {
@@ -169,15 +177,15 @@ module.exports = {
         pathToConfigModule: `src/lib/typography`,
       },
     },
-    'gatsby-plugin-offline',
- 
+    "gatsby-plugin-offline",
+
     {
       resolve: `gatsby-plugin-css-literal-loader`,
-      options: { extension: '.module.scss' },
+      options: { extension: ".module.scss" },
     },
     `gatsby-plugin-client-side-redirect`, // keep it in last in list,
-    'gatsby-plugin-meta-redirect' ,
+    "gatsby-plugin-meta-redirect",
     /* Rest of the plugins */
     `gatsby-plugin-nodejs`,
   ],
-}
+};
