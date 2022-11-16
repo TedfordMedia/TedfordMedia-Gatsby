@@ -24,8 +24,8 @@ const MainFloorDemo = ({ props }) => (
         gl.outputEncoding = THREE.sRGBEncoding;
         gl.shadowMap.enabled = true;
         gl.shadowMap.type = THREE.PCFSoftShadowMap;
-        // gl.shadowMap.autoUpdate = true;
-        // gl.toneMapping = THREE.ACESFilmicToneMapping;
+        gl.shadowMap.autoUpdate = true;
+        gl.toneMapping = THREE.ACESFilmicToneMapping;
 
         const fogColor = new THREE.Color(0xffffff);
         scene.background = fogColor;
