@@ -35,7 +35,7 @@ function SettingsPanel(props) {
   const settingPanelY = useSceneStore.getState().settingPanelY;
   const showLidar = useSceneStore((state) => state.showLidar);
   const dirShadowBias = useSceneStore((state) => state.dirShadowBias);
-  const ambientIntensity = useSceneStore((state) => state.ambientIntensity); 
+  const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
   const posLogo = useSpring({ x: settingPanelX, y: settingPanelY });
 
   const bindLogo = useDrag((params) => {
@@ -125,14 +125,14 @@ function SettingsPanel(props) {
                   useSceneStore.setState({ dirShadowBias: val })
                 }
               />
-            </div>
+            </div> 
             <div>
               Ambient Light {ambientIntensity}
               <Slider
                 value={ambientIntensity}
                 decimals={1}
                 step={0.01}
-                max={.7}
+                max={0.7}
                 aria-label="Default"
                 valueLabelDisplay="auto"
                 onChange={(e, val) =>

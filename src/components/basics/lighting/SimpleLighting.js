@@ -2,13 +2,10 @@ import React from "react";
 import useSceneStore from "/src/useSceneStore";
 
 const SimpleLighting = () => {
-const dirShadowBias = useSceneStore((state) => state.dirShadowBias);
-const ambientIntensity = useSceneStore((state) => state.ambientIntensity);
+  const dirShadowBias = useSceneStore((state) => state.dirShadowBias);
+  const ambientIntensity = useSceneStore((state) => state.ambientIntensity); 
 
-console.log('ambientIntensity', ambientIntensity);
   return (
- 
-
     <group name="lighting">
       <ambientLight intensity={ambientIntensity} />
       <directionalLight

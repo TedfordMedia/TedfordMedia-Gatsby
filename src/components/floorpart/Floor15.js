@@ -6,9 +6,8 @@ import useSceneStore from "/src/useSceneStore";
 
 function Floor15() {
   const { scene } = useLoader(GLTFLoader, "/models/fl15.glb");
-
   const exMetal = useSceneStore((state) => state.exMetal);
-  console.log("exmetal floor15", exMetal);
+
   useEffect(() => {
     GenTools.basicTraverse(scene);
   }, [scene]);
