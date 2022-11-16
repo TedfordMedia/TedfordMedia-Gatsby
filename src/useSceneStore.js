@@ -1,8 +1,7 @@
 import create from "zustand";
 
-let useSceneStore = create((set) => ({
-  exTransmission: 0.5,
-  exMetal: 0.5,
+let useSceneStore = create((set) => ({ 
+  exMetal: 0.11,
   showLidar: false,
   settingsOpen: false,
   settingPanelX: 0,
