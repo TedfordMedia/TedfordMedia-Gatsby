@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useSceneStore from "/src/useSceneStore";
 import SettingsPng from "/static/images/icons/settings.png";
-import SettingsPanel from "@components/ui/settingsPanel";
+import SettingsPanel from "@components/ui/SettingsPanel";
 import "./scicons.css";
 import styled from "styled-components";
 const backgroundNotSelected = "#4e7ea4";
