@@ -34,9 +34,6 @@ function SettingsPanel(props) {
   const exMetal = useSceneStore((state) => state.exMetal);
   const settingPanelX = useSceneStore.getState().settingPanelX;
   const settingPanelY = useSceneStore.getState().settingPanelY;
-  console.log("settingPanelY", settingPanelY);
-  console.log("exTransmission", exTransmission);
-  console.log("exMetal", exMetal);
   const showLidar = useSceneStore((state) => state.showLidar);
   const posLogo = useSpring({ x: settingPanelX, y: settingPanelY });
 
@@ -58,15 +55,13 @@ function SettingsPanel(props) {
           width: "50%",
           height: "50%",
           position: "fixed",
-          // top: "25%",
-          // left: "25%",
         }}
         className="iconxsFloater"
       >
-        {/* <CloseHolder> */}
+        <CloseHolder>
         {/* closed */}
         {/* <img src={CloseIcon}/> */}
-        {/* </CloseHolder> */}
+        </CloseHolder>
         <div {...bindLogo()} id="setttitle">
           Settings
         </div>

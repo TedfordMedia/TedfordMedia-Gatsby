@@ -7,7 +7,6 @@ let useSceneStore = create((set) => ({
   settingsOpen: false,
   settingPanelX: 0,
   settingPanelY: 0,
-
   thismytest: null,
   isMobile: false,
   ambientLightIntensity: 0.8,
