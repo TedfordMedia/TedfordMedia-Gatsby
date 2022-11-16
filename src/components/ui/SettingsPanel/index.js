@@ -5,7 +5,6 @@ import { useDrag } from "@use-gesture/react";
 
 import "./App.css";
 
-
 function SettingsPanel(props) {
   const posLogo = useSpring({ x: 0, y: 0 });
   const posHandle = useSpring({ y: 0 });
@@ -33,10 +32,10 @@ function SettingsPanel(props) {
         }}
         className="iconxsFloater"
       >
-        <div id="setttitle">Settings</div>
-        <div id="SettingsOverlayInterior">
-          hello inpus here SLIDER
+        <div {...bindLogo()} id="setttitle">
+          Settings
         </div>
+        <div id="SettingsOverlayInterior">hello inpus here SLIDER</div>
       </animated.div>
     </>
   );
