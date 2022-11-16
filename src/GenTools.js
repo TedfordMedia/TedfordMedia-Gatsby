@@ -364,7 +364,7 @@ function GenTools() {
     const envMap = this.setEnvMap();
 
     let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
-      metalness: .1,
+      metalness: .11,
       roughness: 0,
       clearcoat: 1,
       transmission: 1,
@@ -374,10 +374,10 @@ function GenTools() {
       clearcoatRoughness: 0,
       // color: "#7990e8",
       color: "#ffffff",
-      reflectivity: 1,
+      reflectivity: .9,
       ior: 1,
       // side: THREE.DoubleSide,
-      // thickness: 0.5, // Add refraction!
+      thickness: 0.5, // Add refraction!
     });
     let glassMaterialInterior = new THREE.MeshPhysicalMaterial({
       metalness: 0,
