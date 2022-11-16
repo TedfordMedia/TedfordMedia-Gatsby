@@ -362,19 +362,22 @@ function GenTools() {
   };
   this.applyGlass = function(gltf) {
     const envMap = this.setEnvMap();
+    const exTransmission = useSceneStore.getState().exTransmission;
+    const exMetal = useSceneStore.getState().exMetal;
+    console.log("hello material glass", exTransmission);
 
     let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
-      metalness: .11,
+      metalness: 0.11,
       roughness: 0,
       clearcoat: 1,
       transmission: 1,
       specularIntensity: 1,
       envMap: envMap,
-      sheen:1,
+      sheen: 1,
       clearcoatRoughness: 0,
       // color: "#7990e8",
       color: "#ffffff",
-      reflectivity: .9,
+      reflectivity: 0.9,
       ior: 1,
       // side: THREE.DoubleSide,
       thickness: 0.5, // Add refraction!
