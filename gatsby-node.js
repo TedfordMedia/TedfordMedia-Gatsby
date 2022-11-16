@@ -86,6 +86,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         "@components": path.resolve(__dirname, "src/components"),
         "@helpers": path.resolve(__dirname, "src/helpers"),
+        "@images": path.resolve(__dirname, "static/images"),
         "@models": path.resolve(__dirname, "static/models"),
         "react-dom": "@hot-loader/react-dom",
         $components: path.resolve(__dirname, "src/components"),

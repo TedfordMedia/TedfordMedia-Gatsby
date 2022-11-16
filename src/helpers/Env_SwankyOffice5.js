@@ -331,4 +331,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/Env_SwankyOffice5/Env_SwankyOffice.gltf");
+useGLTF.preload("/models/Env_SwankyOffice5/Env_SwankyOffice.glb");

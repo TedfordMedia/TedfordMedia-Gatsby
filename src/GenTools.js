@@ -358,14 +358,61 @@ function GenTools() {
     envMap.format = THREE.RGBFormat;
     envMap.mapping = THREE.CubeReflectionMapping;
     envMap.encoding = THREE.sRGBEncoding;
-    this.envMap = envMap;
+    return envMap;
+  };
+  this.applyGlass = function(gltf) {
+    const envMap = this.setEnvMap();
+
+    let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
+      metalness: 1,
+      roughness: 0,
+      clearcoat: 0.5,
+      transmission: 1,
+      specularIntensity: 0.5,
+      envMap: envMap,
+      sheen: 0.5,
+      clearcoatRoughness: 0.1,
+      color: "#5565a0",
+      reflectivity: 0.5,
+      ior: 1.5,
+      // side: THREE.DoubleSide,
+      thickness: 0.5, // Add refraction!
+    });
+    let glassMaterialInterior = new THREE.MeshPhysicalMaterial({
+      metalness: 0,
+      roughness: .4,
+      clearcoat: 0.5,
+      transmission: 1,
+      specularIntensity: 0.5,
+      // envMap: envMap,
+      sheen: 0.5,
+      clearcoatRoughness: 0.1,
+      color: "#5565a0",
+      reflectivity: 0.2,
+      ior: 1,
+      // side: THREE.DoubleSide,
+      // thickness: 0.5, // Add refraction!
+    });
+    gltf.traverse((child) => {
+      if (child.isMesh === true) {
+        if (child.material?.name.toLowerCase().includes("glass")) {
+          console.log("child.material.name:", child.material.name);
+
+          if (child.material?.name.toLowerCase().includes("internal")) {
+            child.material = glassMaterialInterior;
+          } else {
+            child.material = glassMaterialExterior;
+          }
+        }
+      }
+    });
   };
   this.basicTraverse = function(gltf) {
     gltf.traverse((child) => {
       if (child.isMesh === true) {
         child.frustumCulled = false;
         child.castShadow = true;
-        child.receiveShadow = true; 
+        child.receiveShadow = true;
       }
     });
   };

@@ -1,0 +1,94 @@
+.scicons {
+  margin: 0 auto;
+  display: block;
+  width: 25px;
+  pointer-events: none;
+}
+.myicon {
+  margin: 5px;
+}
+#iconzz {
+  margin-left: 0.7rem;
+}
+.flexboxholder {
+  display: flex;
+  flex-direction: row;
+}
+
+#zControlOverlay {
+  pointer-events: none;
+  position: fixed;
+  bottom: 10px;
+  z-index: 191;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fader {
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.zlexboxholder {
+  display: flex;
+  flex-direction: row;
+  /* 
+ 
+  align-items: center; */
+}
+.flexboxx-item {
+  margin: 5px; 
+} 
+.flexboxx-witem {
+  width: 200px;
+  margin: 10px;
+  background-color: yellowgreen;
+}
+.flexboxx-1 {
+  min-height: 50px;
+}
+.flexboxx-2 {
+  min-height: 75px;
+}
+.flexboxx-3 {
+  min-height: 100px;
+}
+.flexboxx-ham {
+  min-height: 100px;
+}
