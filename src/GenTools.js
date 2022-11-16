@@ -364,23 +364,24 @@ function GenTools() {
     const envMap = this.setEnvMap();
 
     let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
-      metalness: 1,
+      metalness: .1,
       roughness: 0,
-      clearcoat: 0.5,
+      clearcoat: 1,
       transmission: 1,
-      specularIntensity: 0.5,
+      specularIntensity: 1,
       envMap: envMap,
-      sheen: 0.5,
-      clearcoatRoughness: 0.1,
-      color: "#5565a0",
-      reflectivity: 0.5,
-      ior: 1.5,
+      sheen:1,
+      clearcoatRoughness: 0,
+      // color: "#7990e8",
+      color: "#ffffff",
+      reflectivity: 1,
+      ior: 1,
       // side: THREE.DoubleSide,
-      thickness: 0.5, // Add refraction!
+      // thickness: 0.5, // Add refraction!
     });
     let glassMaterialInterior = new THREE.MeshPhysicalMaterial({
       metalness: 0,
-      roughness: .4,
+      roughness: 0.4,
       clearcoat: 0.5,
       transmission: 1,
       specularIntensity: 0.5,
@@ -396,6 +397,7 @@ function GenTools() {
     gltf.traverse((child) => {
       if (child.isMesh === true) {
         if (child.material?.name.toLowerCase().includes("glass")) {
+          let matName = child.material?.name.toLowerCase();
           console.log("child.material.name:", child.material.name);
 
           if (child.material?.name.toLowerCase().includes("internal")) {
@@ -403,6 +405,7 @@ function GenTools() {
           } else {
             child.material = glassMaterialExterior;
           }
+          child.material.name = matName;
         }
       }
     });
