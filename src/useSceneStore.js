@@ -1,6 +1,8 @@
 import create from "zustand";
 
-let useSceneStore = create((set) => ({ 
+let useSceneStore = create((set) => ({
+  dirShadowBias:  0.000025,
+  ambientIntensity: 0.1,
   exMetal: 0.11,
   showLidar: false,
   settingsOpen: false,

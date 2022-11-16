@@ -30,11 +30,12 @@ const DoMiddle = styled.div`
   vertical-align: bottom;
 `;
 function SettingsPanel(props) {
-  const exTransmission = useSceneStore((state) => state.exTransmission);
   const exMetal = useSceneStore((state) => state.exMetal);
   const settingPanelX = useSceneStore.getState().settingPanelX;
   const settingPanelY = useSceneStore.getState().settingPanelY;
   const showLidar = useSceneStore((state) => state.showLidar);
+  const dirShadowBias = useSceneStore((state) => state.dirShadowBias);
+  const ambientIntensity = useSceneStore((state) => state.ambientIntensity); 
   const posLogo = useSpring({ x: settingPanelX, y: settingPanelY });
 
   const bindLogo = useDrag((params) => {
@@ -59,8 +60,8 @@ function SettingsPanel(props) {
         className="iconxsFloater"
       >
         <CloseHolder>
-        {/* closed */}
-        {/* <img src={CloseIcon}/> */}
+          {/* closed */}
+          {/* <img src={CloseIcon}/> */}
         </CloseHolder>
         <div {...bindLogo()} id="setttitle">
           Settings
@@ -77,8 +78,6 @@ function SettingsPanel(props) {
             pointerEvents: "auto",
           }}
         >
-          exTransmission {exTransmission}
-          exMetal {exMetal}
           <FormGroup>
             <DoMiddle>
               {" "}
@@ -95,30 +94,60 @@ function SettingsPanel(props) {
                   </Box>
                 }
                 labelPlacement="bottom"
+              />{" "}
+              <FormControlLabel
+                size="large"
+                checked={showLidar}
+                control={<Switch />}
+                onChange={(e, val) => {
+                  useSceneStore.setState({ showLidar: val });
+                }}
+                label={
+                  <Box component="div" fontSize={15}>
+                    Show
+                  </Box>
+                }
+                labelPlacement="bottom"
               />
             </DoMiddle>
           </FormGroup>
+          <div style={{ backgroundColor: "pink" }}>
+            <div>
+              Shadow bias {dirShadowBias}
+              <Slider
+                value={dirShadowBias}
+                decimals={1}
+                step={0.000001}
+                max={0.0001}
+                aria-label="Default"
+                valueLabelDisplay="auto"
+                onChange={(e, val) =>
+                  useSceneStore.setState({ dirShadowBias: val })
+                }
+              />
+            </div>
+            <div>
+              Ambient Light {ambientIntensity}
+              <Slider
+                value={ambientIntensity}
+                decimals={1}
+                step={0.01}
+                max={.7}
+                aria-label="Default"
+                valueLabelDisplay="auto"
+                onChange={(e, val) =>
+                  useSceneStore.setState({ ambientIntensity: val })
+                }
+              />
+            </div>
+          </div>
           <div>
-            Glass exterior Transmission
-            <Slider
-              value={exTransmission}
-              decimals={1}
-              step={0.05}
-              max={1}
-              aria-label="Default"
-              valueLabelDisplay="auto"
-              onChange={(e, val) =>
-                useSceneStore.setState({ exTransmission: val })
-              }
-            />
-          </div>{" "}
-          <div>
-            Glass exterior Metalness
+            Glass exterior metalness {exMetal}
             <Slider
               value={exMetal}
               decimals={1}
-              step={0.05}
-              max={1}
+              step={0.01}
+              max={0.6}
               aria-label="Default"
               valueLabelDisplay="auto"
               onChange={(e, val) => useSceneStore.setState({ exMetal: val })}
