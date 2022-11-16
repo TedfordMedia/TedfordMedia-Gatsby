@@ -23,7 +23,7 @@ const MainFloorDemo = ({ props }) => (
       onCreated={({ gl, camera, scene }) => {
         gl.outputEncoding = THREE.sRGBEncoding;
         gl.shadowMap.enabled = true;
-        // gl.shadowMap.type = THREE.PCFSoftShadowMap;
+        gl.shadowMap.type = THREE.PCFSoftShadowMap;
         gl.shadowMap.autoUpdate = true;
         gl.toneMapping = THREE.ACESFilmicToneMapping;
 

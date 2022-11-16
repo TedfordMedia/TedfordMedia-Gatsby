@@ -381,19 +381,18 @@ function GenTools() {
       thickness: 0.5, // Add refraction!
     });
     let glassMaterialInterior = new THREE.MeshPhysicalMaterial({
-      metalness: 0,
-      roughness: 0.4,
-      clearcoat: 0.5,
+      metalness: 0, 
+      roughness: 0,
+      clearcoat: 1,
       transmission: 1,
-      specularIntensity: 0.5,
-      // envMap: envMap,
-      sheen: 0.5,
-      clearcoatRoughness: 0.1,
-      color: "#5565a0",
-      reflectivity: 0.2,
+      specularIntensity: 1,
+      sheen: 1,
+      clearcoatRoughness: 0, 
+      color: "#ffffff",
+      reflectivity: 0.9,
       ior: 1,
       // side: THREE.DoubleSide,
-      // thickness: 0.5, // Add refraction!
+      thickness: 0.5, // Add refraction!
     });
     gltf.traverse((child) => {
       if (child.isMesh === true) {

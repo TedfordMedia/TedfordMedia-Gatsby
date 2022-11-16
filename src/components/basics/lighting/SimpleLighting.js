@@ -12,8 +12,8 @@ console.log('ambientIntensity', ambientIntensity);
     <group name="lighting">
       <ambientLight intensity={ambientIntensity} />
       <directionalLight
-        shadow-mapSize-height={1024}
-        shadow-mapSize-width={1024}
+        shadow-mapSize-height={2048}
+        shadow-mapSize-width={2048}
         shadow-radius={2}
         shadow-bias={-dirShadowBias}
         //  shadow-camera-far={50}
