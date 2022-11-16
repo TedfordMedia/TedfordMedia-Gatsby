@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useSceneStore from "/src/useSceneStore";
 import SettingsPng from "/static/images/icons/settings.png";
-
-// import resetIcon from "@images/reset.svg";
+import SettingsPanel from "@components/ui/settingsPanel";
 import "./scicons.css";
 import styled from "styled-components";
 const backgroundNotSelected = "#4e7ea4";
@@ -31,7 +30,6 @@ export const IconDiv = styled.div`
   z-index: 101;
 `;
 const TheIconDiv = (props) => {
-
   const clickSet = (e) => {
     useSceneStore.setState({ settingsOpen: !props.selected });
   };
@@ -44,31 +42,34 @@ const TheIconDiv = (props) => {
 };
 
 function SettingsIcon(props) {
-  const [isOpen, setOpen] = useState(false);
- 
-  const settingsOpen = useSceneStore((state) => state.settingsOpen) 
+  const settingsOpen = useSceneStore((state) => state.settingsOpen);
 
-  console.log(" settingsOpen", settingsOpen);
   return (
-    <div
-      id="zControlOverlay"
-      style={{ width: "100%" }}
-      className="iconxsFloater"
-    >
-      <div
-        className="flexboxholder"
-        style={{
-          justifyContent: "left",
-          paddingTop: "10px",
-        }}
-      >
-        <>
-          <div className="flexboxx-item  fader flexboxx-1">
-            <TheIconDiv selected={settingsOpen} />
+    <>
+      {settingsOpen ? (
+        <SettingsPanel />
+      ) : (
+        <div
+          id="zControlOverlay"
+          style={{ width: "100%" }}
+          className="iconxsFloater"
+        >
+          <div
+            className="flexboxholder"
+            style={{
+              justifyContent: "left",
+              paddingTop: "10px",
+            }}
+          >
+            <>
+              <div className="flexboxx-item  fader flexboxx-1">
+                <TheIconDiv selected={settingsOpen} />
+              </div>
+            </>
           </div>
-        </>
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }
 export default SettingsIcon;

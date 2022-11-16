@@ -5,7 +5,7 @@ import * as THREE from "three";
 import Floor15 from "@components/floorpart/Floor15";
 import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
-import SettingsIcon from "@components/ui/SettingsIcon";
+import SettingsIcon from "@components/ui/SettingsIcon"; 
 
 const MainFloorDemo = ({ props }) => (
   <>
