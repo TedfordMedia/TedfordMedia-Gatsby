@@ -4,9 +4,7 @@ import { animated, useSpring } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 
 import "./App.css";
-import MyPng from "/static/images/squareA.png";
 
-const BOTTOM_POINT = window.innerHeight - 30;
 
 function SettingsPanel(props) {
   const posLogo = useSpring({ x: 0, y: 0 });
