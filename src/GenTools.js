@@ -380,14 +380,30 @@ function GenTools() {
       // side: THREE.DoubleSide,
       thickness: 0.5, // Add refraction!
     });
+    let glassMaterialExteriorMetal = new THREE.MeshPhysicalMaterial({
+      metalness: 0.8,
+      roughness: 0,
+      clearcoat: 1,
+      transmission: 1,
+      specularIntensity: 1,
+      envMap: envMap,
+      sheen: 1,
+      clearcoatRoughness: 0,
+      // color: "#7990e8",
+      color: "#ffffff",
+      reflectivity: 0.9,
+      ior: 1,
+      // side: THREE.DoubleSide,
+      thickness: 0.5, // Add refraction!
+    });
     let glassMaterialInterior = new THREE.MeshPhysicalMaterial({
-      metalness: 0, 
+      metalness: 0,
       roughness: 0,
       clearcoat: 1,
       transmission: 1,
       specularIntensity: 1,
       sheen: 1,
-      clearcoatRoughness: 0, 
+      clearcoatRoughness: 0,
       color: "#ffffff",
       reflectivity: 0.9,
       ior: 1,
@@ -403,7 +419,11 @@ function GenTools() {
           if (child.material?.name.toLowerCase().includes("internal")) {
             child.material = glassMaterialInterior;
           } else {
-            child.material = glassMaterialExterior;
+            if (child.material?.name.toLowerCase().includes("metal")) {
+              child.material = glassMaterialExteriorMetal;
+            } else {
+              child.material = glassMaterialExterior;
+            }
           }
           child.material.name = matName;
         }
