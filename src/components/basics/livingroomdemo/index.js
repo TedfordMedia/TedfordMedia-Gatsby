@@ -15,7 +15,7 @@ const LivingRoomDemo = ({ props }) => (
       shadows
       gl={{ alpha: false }}
       camera={{
-        position: [-1.1, 1.3, 2.7],
+        position: [0, .6, 0],
         fov: 30,
         near: 0.01,
         far: 3000,
@@ -32,14 +32,13 @@ const LivingRoomDemo = ({ props }) => (
         scene.fog = new THREE.Fog(fogColor, 0.0025, 80);
         gl.setPixelRatio(window.devicePixelRatio);
       }}
-    >
-      <SimpleLighting />
+    > 
       <Floor />
 
       <Suspense fallback={<Html>loading</Html>}>
         <LivingR />
       </Suspense>
-      <OrbitControls autoRotate autoRotateSpeed={8.2} enableZoom={false}  target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
+      <OrbitControls   target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
     {/* {props?.noSettings && <SettingsIcon />} */}
   </>
