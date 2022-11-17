@@ -15,7 +15,7 @@ const MainFloorDemo = ({ props }) => (
       shadows
       gl={{ alpha: false }}
       camera={{
-        position: [-1.5, 2.3, 3],
+        position: [-1.1, 1.9, 2.8],
         fov: 30,
         near: 0.01,
         far: 3000,
