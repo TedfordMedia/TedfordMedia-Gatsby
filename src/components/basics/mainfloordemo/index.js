@@ -39,7 +39,7 @@ const MainFloorDemo = ({ props }) => (
       <Suspense fallback={<Html>loading</Html>}>
         <Floor15 />
       </Suspense>
-      <OrbitControls autoRotate enableZoom={false}  target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
+      <OrbitControls autoRotate autoRotateSpeed={1.2} enableZoom={false}  target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
     {/* {props?.noSettings && <SettingsIcon />} */}
   </>
