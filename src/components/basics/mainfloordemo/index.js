@@ -5,7 +5,7 @@ import * as THREE from "three";
 import Floor15 from "@components/floorpart/Floor15";
 import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
-import SettingsIcon from "@components/ui/SettingsIcon"; 
+import SettingsIcon from "@components/ui/SettingsIcon";
 
 const MainFloorDemo = ({ props }) => (
   <>
@@ -15,7 +15,7 @@ const MainFloorDemo = ({ props }) => (
       shadows
       gl={{ alpha: false }}
       camera={{
-        position: [-3, 6, 6.5],
+        position: [-1.1, 1.3, 2.7],
         fov: 30,
         near: 0.01,
         far: 3000,
@@ -39,9 +39,9 @@ const MainFloorDemo = ({ props }) => (
       <Suspense fallback={<Html>loading</Html>}>
         <Floor15 />
       </Suspense>
-      <OrbitControls target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
+      <OrbitControls autoRotate autoRotateSpeed={8.2} enableZoom={false}  target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
-    <SettingsIcon />
+    {/* {props?.noSettings && <SettingsIcon />} */}
   </>
 );
 

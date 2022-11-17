@@ -1,20 +1,12 @@
 import * as THREE from 'three'
 import React, { Suspense, useRef, useState, useEffect } from 'react'
-import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useTexture, Html, softShadows, Shadow, MeshWobbleMaterial } from '@react-three/drei'
-import { Water } from 'three-stdlib'
 import { css } from '@emotion/core'
-
-import Sub from "../../helpers/Submarine.js"; 
 import LogoTedfordMedia from "../../helpers/Tedmedia3dlogo.js";  
 import Layout from "../../components/layoutwidellh"  
-// import { Canvas, useFrame} from "@react-three/fiber"
-// import { Stars, Html, OrbitControls, useLoader, useTexture, Text } from '@react-three/drei';
-// import * as THREE from 'three'
-import Sofa from "../../helpers/Tedmed_sofa.js"; 
 softShadows();
 
- 
 function Button() {
   const vec = new THREE.Vector3()
   const light = useRef()

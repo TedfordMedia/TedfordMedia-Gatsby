@@ -8,7 +8,7 @@ export default function Model(props) {
   const group = useRef()
   const occluderRef =  useRef()
   const { nodes, materials, animations } = useGLTF('/samsunglaptop.glb')
-  const { actions } = useAnimations(animations, group)
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
