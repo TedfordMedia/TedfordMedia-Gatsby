@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import useSceneStore from "/src/useSceneStore";
 
 function Floor15() {
-  const { scene } = useLoader(GLTFLoader, "/models/31wV2.glb");
+  const { scene } = useLoader(GLTFLoader, "/models/31wV3.glb");
   const exMetal = useSceneStore((state) => state.exMetal);
 
   useEffect(() => {
