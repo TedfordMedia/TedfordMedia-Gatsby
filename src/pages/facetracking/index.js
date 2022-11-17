@@ -1,13 +1,8 @@
 
-import styled from '@emotion/styled'  
- 
 import * as THREE from 'three'
-import React, { Suspense, useRef, useMemo , useState,useEffect} from 'react'
-import { Canvas, useThree, useLoader, useFrame } from '@react-three/fiber'
-import { OrbitControls, useTexture, Html } from '@react-three/drei' 
-import { css } from '@emotion/core'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import Layout from "../../components/layoutwidellh"   
+import React, { Suspense, useRef , useState,useEffect} from 'react'
+import { Canvas, useThree, useFrame } from '@react-three/fiber'
+import { useTexture, Html } from '@react-three/drei' 
  
 // import main script and neural network model from Jeeliz FaceFilter NPM package
 import { JEELIZFACEFILTER, NN_4EXPR } from 'facefilter'

@@ -1,31 +1,12 @@
 import React, { Suspense, useRef, useState, useEffect } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
-import { ContactShadows, Environment, useGLTF, OrbitControls, Html } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { Environment, OrbitControls } from "@react-three/drei"
 import Webcam from "react-webcam"; 
-import { proxy, useSnapshot } from "valtio"
+import { proxy } from "valtio"
 import '../../styles.css'
 import '../mystyling.scss'  
 import Layout from "../../components/layoutwide"   
-import * as THREE from 'three' 
-
-import {
-  TextField,
-  Grid,
-  AppBar,
-  Toolbar,
-  Typography,
-  Box,
-  IconButton,
-  Button,
-} from "@material-ui/core";
 import './App.css'
-import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles } from "@material-ui/core/styles";
-import * as cocoSsd from "@tensorflow-models/coco-ssd";
-import * as tf from "@tensorflow/tfjs"; 
-import { createWorker,createScheduler  } from 'tesseract.js';
-
- 
  
 const state = proxy({
   current: null,
