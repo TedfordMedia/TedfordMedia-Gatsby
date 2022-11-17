@@ -6,7 +6,6 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import Layout from "@components/Layout";
 import styled from "@emotion/styled";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useTheme } from "@components/Theming";
 import Image from "gatsby-image";
 
 import "../mystyling.scss";
@@ -16,7 +15,6 @@ const StyledLink = styled((props) => <Link {...props} />)`
 `;
 
 export default function Index({ data: { site, allMdx } }) {
-  const theme = useTheme();
 
   useEffect(() => {
     document.body.style.cursor = "auto";
