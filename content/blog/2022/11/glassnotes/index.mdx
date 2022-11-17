@@ -15,10 +15,32 @@ import MainFloorDemo from "@components/basics/mainfloordemo";
 import Layout from "/src/components/textholder.js";
 
 <Layout>
-Here's a basic Revit model converted to GLB and rendered in React-Three-Fiber. The glass is a PBR material which is more realistic than the standard glass material.
-<br /><br />
+  Here's a basic Revit model converted to GLB and rendered in React-Three-Fiber.
+  The glass is a PBR material which is more realistic than the standard glass
+  material.
+  <br />
+  <br />
 </Layout>
 
 <div style="width: 100%; height: 60vh; position: relative; overflow: hidden;">
-  <MainFloorDemo/>
+  <MainFloorDemo />
 </div>
+
+Here is the relevant material. In addition to this, an environment map is used to give the glass good reflection.
+
+<code>
+    let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
+      metalness: 0.11,
+      roughness: 0,
+      clearcoat: 1,
+      transmission: 1,
+      specularIntensity: 1,
+      envMap: envMap,  
+      sheen: 1,
+      clearcoatRoughness: 0,
+      color: "#ffffff",
+      reflectivity: 0.9,
+      ior: 1,
+      thickness: 0.5, 
+    });
+</code>
