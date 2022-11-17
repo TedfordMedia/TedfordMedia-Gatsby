@@ -1,13 +1,10 @@
-import React, { useRef, useEffect } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/submarine.glb");
-  const { actions } = useAnimations(animations, group);
-  useEffect(() => {
-    actions.Animation.play();
-  });
+  const { nodes, materials } = useGLTF("/submarine.glb");
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
