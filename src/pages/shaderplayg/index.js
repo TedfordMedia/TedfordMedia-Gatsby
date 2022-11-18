@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { css } from "@emotion/core";
 import Layout from "@components/LayoutX";
 import { useTheme } from "@components/Theming";
-import ShaderThings from "./ShaderThings";
+import ShaderThings from "@components/shaders/ShaderThings";
 
 const BasicContainer = () => {
   const theme = useTheme();

@@ -22,7 +22,7 @@ export default function Shader2(props) {
       boxRef.current.rotation.y = boxRef.current.rotation.x -= 0.002;
     });
     return (
-      <mesh ref={boxRef} position={[1.5, 0.51, -10]} scale={2}>
+      <mesh {...props} ref={boxRef} scale={2}>
         <boxGeometry />
         <shaderMaterial
           attach="material"
@@ -40,7 +40,7 @@ export default function Shader2(props) {
 
   return (
     <>
-      <ConeShape />
+      <ConeShape {...props} />
     </>
   );
 }
