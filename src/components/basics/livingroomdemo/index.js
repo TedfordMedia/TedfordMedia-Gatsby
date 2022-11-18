@@ -46,3 +46,4 @@ const LivingRoomDemo = ({ props }) => (
 );
 
 export default LivingRoomDemo;
+  
