@@ -10,7 +10,7 @@ function LivingR() {
 
   useEffect(() => {
     GenTools.basicTraverse(scene);
-    GenTools.addLightMatLighting(scene);
+    // GenTools.addLightMatLighting(scene);
   }, [scene]);
 
   useEffect(() => {

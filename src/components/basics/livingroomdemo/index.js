@@ -15,7 +15,7 @@ const LivingRoomDemo = ({ props }) => (
       shadows
       gl={{ alpha: false }}
       camera={{
-        position: [0, .6, 0],
+        position: [0, .6, .7],
         fov: 30,
         near: 0.01,
         far: 3000,
@@ -32,7 +32,8 @@ const LivingRoomDemo = ({ props }) => (
         scene.fog = new THREE.Fog(fogColor, 0.0025, 80);
         gl.setPixelRatio(window.devicePixelRatio);
       }}
-    > 
+    >
+      <SimpleLighting />
       <Floor />
 
       <Suspense fallback={<Html>loading</Html>}>
