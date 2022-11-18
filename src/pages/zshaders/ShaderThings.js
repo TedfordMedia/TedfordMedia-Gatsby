@@ -7,6 +7,7 @@ import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
 import SettingsIcon from "@components/ui/SettingsIcon";
 import LogoShader1 from "@components/shaders/LogoShader1";
+import Shader2 from "@components/shaders/Shader2";
 
 const ShaderThings = ({ props }) => (
   <>
@@ -24,6 +25,7 @@ const ShaderThings = ({ props }) => (
 
       <Suspense fallback={<Html>loading</Html>}>
         <LogoShader1 />
+        <Shader2 />
       </Suspense>
       <OrbitControls target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>

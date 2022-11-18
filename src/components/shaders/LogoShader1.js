@@ -1,11 +1,9 @@
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function LogoShader1(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/tedmedia3dlogo.glb");
   var startTime = Date.now();
 
   var uniforms = {
@@ -64,10 +62,10 @@ export default function LogoShader1(props) {
   function ConeShape(props) {
     const mesh = useRef();
     useFrame(() => {
-      mesh.current.rotation.y = mesh.current.rotation.x -= 0.01;
+      mesh.current.rotation.y = mesh.current.rotation.x += 0.003;
     });
     return (
-      <mesh ref={mesh} position={[0,0,-3]} scale={(0.5, 0.5, 0.8)}>
+      <mesh ref={mesh} position={[-1,0,-3]} scale={(0.5, 0.5, 0.8)}>
         <coneGeometry
           attach="geometry"
           args={[1, 2.5, 3]}
@@ -88,41 +86,11 @@ export default function LogoShader1(props) {
     );
   }
 
-  // Draw Sphere
-  function Sphere(props) {
-    const mesh = useRef();
-
-    useFrame(() => {
-      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
-    });
-    return (
-      <mesh ref={mesh} position={[0, 0, 0]}>
-        <sphereGeometry
-          attach="geometry"
-          args={[1, 2, 5]} // Width, Height and Depth of the sphere
-          smoothness={5}
-          {...props}
-        />
-        <shaderMaterial
-          attach="material"
-          args={[
-            {
-              uniforms: uniforms,
-              vertexShader: vertexShader,
-              fragmentShader: fragmentShader,
-            },
-          ]}
-        />
-      </mesh>
-    );
-  }
+ 
   return (
     <>
       <ConeShape />
-      {/* <Sphere position={[3, 3, 3]} /> */}
-     
     </>
   );
 }
 
-useGLTF.preload("/tedmedia3dlogo.glb");
