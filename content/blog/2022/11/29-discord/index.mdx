@@ -4,31 +4,36 @@ goto: threediscord
 author: "Ted@TedfordMedia"
 date: 2022-11-29
 title: Controlling Three.js from Discord
-description: 'A Discord Chat Bot to control a Three.js scene with WebSockets'
+description: "A Discord Chat Bot to control a Three.js scene with WebSockets"
 published: true
 banner: "./disbot.png"
 featuredImageCaption: "adsadsas"
 featuredScene: false
 ---
 
+import Link from "./Link";
 import MainFloorDemo from "@components/basics/mainfloordemo";
 import Layout from "/src/components/textholder.js";
 
 <Layout>
-  Concept:  Create a Discord Bot that can talk to Three.js clients through a Node.js server with Socket.io. The bot deciphers text input and triggers updates to all connected Three.js clients.<br />  <br /><br />
-<YouTube youTubeId="i8fYWOt6hKE" />
+  Concept: Create a Discord Bot that can talk to Three.js clients through a
+  Node.js server with Socket.io. The bot deciphers text input and triggers
+  updates to all connected Three.js clients.
+  <br /> <br />
+  <br />
+  <YouTube youTubeId="i8fYWOt6hKE" />
 </Layout>
-
 
 <Layout>
 ** Check out the GitHub repository Here<br />
 https://github.com/TedfordMedia/nodejs-socket-server-js/blob/main/src/html/js/threeScene.js<br />
-https://github.com/TedfordMedia/nodejs-socket-server-js
+
+<Link aria-label={`Here`} to={`https://github.com/TedfordMedia/nodejs-socket-server-js`}/>
 
 <br />
 <br />
 
-Here is the main Node.js file app.js; as you can see it's a simple setup, with classes in different .js files for both the server and client requirements.  <br />
+Here is the main Node.js file app.js; as you can see it's a simple setup, with classes in different .js files for both the server and client requirements. <br />
 
 ```
 
@@ -68,5 +73,3 @@ server.listen(port, hostname, () => {
 [hover bike: https://sketchfab.com/TuppsM](https://sketchfab.com/3d-models/hover-bike-the-rocket-8b2e5bfca78e41c791b4e5b5e8c04512)<br />
 
 </Layout>
-
-
