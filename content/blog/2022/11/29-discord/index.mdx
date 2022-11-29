@@ -11,7 +11,7 @@ featuredImageCaption: "adsadsas"
 featuredScene: false
 ---
 
-import { Link  } from 'gatsby'
+import Link from '@components/Link'
 import MainFloorDemo from "@components/basics/mainfloordemo";
 import Layout from "/src/components/textholder.js";
 
@@ -20,7 +20,6 @@ import Layout from "/src/components/textholder.js";
   Node.js server with Socket.io. The bot deciphers text input and triggers
   updates to all connected Three.js clients.
   <br /> <br />
-  <br />
   <YouTube youTubeId="i8fYWOt6hKE" />
 </Layout>
 
@@ -29,7 +28,19 @@ import Layout from "/src/components/textholder.js";
 https://github.com/TedfordMedia/nodejs-socket-server-js/blob/main/src/html/js/threeScene.js<br />
 
 <Link aria-label={`Here`} to={`https://github.com/TedfordMedia/nodejs-socket-server-js`}/>
-
+        <Link
+            to="https://github.com/TedfordMedia/nodejs-socket-server-js"
+            aria-label="go to homepage"
+            css={css`
+              color: white;
+              &:hover {
+                color: white;
+                text-decoration: none;
+              }
+            `}
+          >
+           xxxxxxx
+          </Link>
 <br />
 <br />
 
