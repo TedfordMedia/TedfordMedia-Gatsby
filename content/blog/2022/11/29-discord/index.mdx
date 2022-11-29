@@ -30,33 +30,63 @@ import Layout from "/src/components/textholder.js";
 
   <br />
   <br />
+This setup enables all connected clients to receive the added models, so this contains the barebones requirements for a multiplayer setup.  
 
 
+Notes:
+Node.js server running via PM2 which controls the routes and therefore provides the client Html.
+It also runs as a Discord Bot and a Socket.io server on port 3000.
+
+Discord Bot, running 
 </Layout>
 
 
 ** Check out the GitHub repository Here
-
+https://github.com/TedfordMedia/nodejs-socket-server-js/blob/main/src/html/js/threeScene.js
+https://github.com/TedfordMedia/nodejs-socket-server-js
 
 <br />
 
 <Layout>
-Here is the relevant material. In addition to this, an environment map is used to give the glass good reflection.
+Here is the maon Node.js file app.js; as you can see it's a simple setup, with the pieces of code separated into classes in different .js files for both the server and client requirements.
 
 ```
-    let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
-      metalness: 0.11,
-      roughness: 0,
-      clearcoat: 1,
-      transmission: 1,
-      specularIntensity: 1,
-      envMap: envMap,
-      sheen: 1,
-      clearcoatRoughness: 0,
-      color: "#ffffff",
-      reflectivity: 0.9,
-      ior: 1,
-      thickness: 0.5,
-    });
+let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
+import http from 'http';
+import express from 'express';
+import { Server } from "socket.io";
+import mainTools from './mainTools.js';
+import dTools from './discordTools.js';
+import { doRouting } from './routing.js';
+dTools.mainPart();
+dTools.createClient();
+
+const app = express();
+const server = http.createServer(app);
+const hostname = '0.0.0.0';
+const port = 80;
+const io = new Server(server);
+
+doRouting(app);
+
+mainTools.setupIo(io);
+dTools.setupIo(io);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  mainTools.checkSocketIncoming(socket);
+});
+
+server.listen(port, hostname, () => {
+
+  console.log(`v2 Server running at http://${hostname}:${port}/`);
+
+});
 ```
 </Layout>
+
+Links here for models:
+https://sketchfab.com/norberto3d NORMERTO-3D  https://sketchfab.com/3d-models/dragon-flying-78f809b98bbe426e94d4024dc894b206 
+
+gearbox https://sketchfab.com/3d-models/gearbox-animation-7c9a82e633e5460298032b6d195b236c https://sketchfab.com/vitalysavitskiy
+hover bike https://sketchfab.com/3d-models/hover-bike-the-rocket-8b2e5bfca78e41c791b4e5b5e8c04512  https://sketchfab.com/TuppsM
