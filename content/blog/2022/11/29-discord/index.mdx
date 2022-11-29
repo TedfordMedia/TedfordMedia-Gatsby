@@ -1,0 +1,72 @@
+---
+slug: threediscord
+goto: threediscord
+author: "Ted@TedfordMedia"
+date: 2022-11-29
+title: Controlling Three.js from Discord
+description: 'A Discord Chat Bot to control a Three.js scene with WebSockets'
+published: true
+banner: "./disbot.png"
+featuredImageCaption: "adsadsas"
+featuredScene: false
+---
+
+import MainFloorDemo from "@components/basics/mainfloordemo";
+import Layout from "/src/components/textholder.js";
+
+<Layout>
+  Concept:  Create a Discord Bot that can talk to Three.js clients through a Node.js server with Socket.io. The bot deciphers text input and triggers updates to all connected Three.js clients.<br />  <br /><br />
+<YouTube youTubeId="i8fYWOt6hKE" />
+</Layout>
+
+
+<Layout>
+** Check out the GitHub repository Here<br />
+https://github.com/TedfordMedia/nodejs-socket-server-js/blob/main/src/html/js/threeScene.js<br />
+https://github.com/TedfordMedia/nodejs-socket-server-js
+
+<br />
+<br />
+
+Here is the main Node.js file app.js; as you can see it's a simple setup, with classes in different .js files for both the server and client requirements.  <br />
+
+```
+let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
+import http from 'http';
+import express from 'express';
+import { Server } from "socket.io";
+import mainTools from './mainTools.js';
+import dTools from './discordTools.js';
+import { doRouting } from './routing.js';
+dTools.mainPart();
+dTools.createClient();
+
+const app = express();
+const server = http.createServer(app);
+const hostname = '0.0.0.0';
+const port = 80;
+const io = new Server(server);
+
+doRouting(app);
+
+mainTools.setupIo(io);
+dTools.setupIo(io);
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  mainTools.checkSocketIncoming(socket);
+});
+
+server.listen(port, hostname, () => {
+  console.log(`v2 Server running at http://${hostname}:${port}/`);
+});
+```
+
+<br /><br />Links here for models:<br />
+[dragon: https://sketchfab.com/norberto3d](https://sketchfab.com/3d-models/dragon-flying-78f809b98bbe426e94d4024dc894b206)<br />
+[gearbox: https://sketchfab.com/vitalysavitskiy](https://sketchfab.com/3d-models/gearbox-animation-7c9a82e633e5460298032b6d195b236c)<br />
+[hover bike: https://sketchfab.com/TuppsM](https://sketchfab.com/3d-models/hover-bike-the-rocket-8b2e5bfca78e41c791b4e5b5e8c04512)<br />
+
+</Layout>
+
+
