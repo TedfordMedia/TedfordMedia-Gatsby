@@ -17,34 +17,7 @@ import Layout from "/src/components/textholder.js";
 <Layout>
   Concept:  Create a Discord Bot that can dynamically communicate with Three.js clients running from a Node.js server with Socket.io. The bot deciphers text input and triggers updates to all connected Three.js clients.<br />  <br />
 </Layout>
-<YouTube youTubeId="K-TdxmdOJXg" />
-
-
-<Layout>
-  The concept here is to be able to talk to a Discord Bot that deciphers commands and triggers updates to a Three.js demo scene.
-* Bullet list
-  * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
-
- 
-
- - Bullet list
-              - Nested bullet
-                  - Sub-nested bullet etc
-          - Bullet list item 2   
-
-  <br />
-  <br />
-This setup enables all connected clients to receive the added models, so this contains the barebones requirements for a multiplayer setup.  
-
-
-Notes:
-Node.js server running via PM2 which controls the routes and therefore provides the client Html.
-It also runs as a Discord Bot and a Socket.io server on port 3000.
-
-Discord Bot, running 
-</Layout>
+<YouTube youTubeId="https://www.youtube.com/watch?v=i8fYWOt6hKE" />
 
 
 ** Check out the GitHub repository Here
@@ -84,15 +57,12 @@ io.on('connection', (socket) => {
 });
 
 server.listen(port, hostname, () => {
-
   console.log(`v2 Server running at http://${hostname}:${port}/`);
-
 });
 ```
 </Layout>
 
 Links here for models:
-https://sketchfab.com/norberto3d NORMERTO-3D  https://sketchfab.com/3d-models/dragon-flying-78f809b98bbe426e94d4024dc894b206 
-
-gearbox https://sketchfab.com/3d-models/gearbox-animation-7c9a82e633e5460298032b6d195b236c https://sketchfab.com/vitalysavitskiy
-hover bike https://sketchfab.com/3d-models/hover-bike-the-rocket-8b2e5bfca78e41c791b4e5b5e8c04512  https://sketchfab.com/TuppsM
+dragon: https://sketchfab.com/norberto3d https://sketchfab.com/3d-models/dragon-flying-78f809b98bbe426e94d4024dc894b206 
+gearbox: https://sketchfab.com/3d-models/gearbox-animation-7c9a82e633e5460298032b6d195b236c https://sketchfab.com/vitalysavitskiy
+hover bike: https://sketchfab.com/3d-models/hover-bike-the-rocket-8b2e5bfca78e41c791b4e5b5e8c04512  https://sketchfab.com/TuppsM
