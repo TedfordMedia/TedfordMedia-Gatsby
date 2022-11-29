@@ -1,0 +1,62 @@
+---
+slug: threediscord
+goto: threediscord
+author: "Ted@TedfordMedia"
+date: 2022-11-29
+title: Controlling Three.js from Discord Chat
+description: 'A Discord Chat Bot to control a Three.js scene with WebSockets'
+published: true
+banner: "./glass2.png"
+featuredImageCaption: "adsadsas"
+featuredScene: false
+---
+
+import MainFloorDemo from "@components/basics/mainfloordemo";
+import Layout from "/src/components/textholder.js";
+
+<Layout>
+  The concept here is to be able to talk to a Discord Bot that deciphers commands and triggers updates to a Three.js demo scene.
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
+
+-OR-
+
+ Markup : - Bullet list
+              - Nested bullet
+                  - Sub-nested bullet etc
+          - Bullet list item 2   
+
+  <br />
+  <br />
+
+
+</Layout>
+
+
+** Check out the GitHub repository Here
+
+
+<br />
+
+<Layout>
+Here is the relevant material. In addition to this, an environment map is used to give the glass good reflection.
+
+```
+    let glassMaterialExterior = new THREE.MeshPhysicalMaterial({
+      metalness: 0.11,
+      roughness: 0,
+      clearcoat: 1,
+      transmission: 1,
+      specularIntensity: 1,
+      envMap: envMap,
+      sheen: 1,
+      clearcoatRoughness: 0,
+      color: "#ffffff",
+      reflectivity: 0.9,
+      ior: 1,
+      thickness: 0.5,
+    });
+```
+</Layout>
