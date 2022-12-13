@@ -12,7 +12,7 @@
 
  .
 
-  ![](https://basicpageforcorsfiles.azurewebsites.net/assets/imgs/top-page/pageheader.png)
+  ![]https://github.com/TedfordMedia/TedfordMedia-Gatsby/blob/main/src/images/square_logo.png)
 
  
 
