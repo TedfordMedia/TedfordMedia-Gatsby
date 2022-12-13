@@ -3,7 +3,7 @@ import Layout from "../../components/layoutwide"
 import { Canvas } from "@react-three/fiber"
 import { Stars, OrbitControls } from '@react-three/drei';
 import { Physics } from "@react-three/cannon";
-import Ball from "ball";
+import Ball from "./ball";
 
 import * as THREE from 'three'
 import Stairs from "@components/Stairs";
