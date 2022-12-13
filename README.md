@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://www.tedfordmedia.com">
-    <img alt="Gatsby" src="https://basicpageforcorsfiles.azurewebsites.net/assets/imgs/top-page/pageheader.png" height="60" />
+    <img alt="Gatsby" src="https://github.com/TedfordMedia/TedfordMedia-Gatsby/blob/main/src/images/square_logo.png" height="60" />
   </a>
 </p>
 <!--
