@@ -1,7 +1,5 @@
 ### Welcome To TedfordMedia
 
-![square A](https://raw.githubusercontent.com/TedfordMedia/tedfordmedia/main/static/images/squareA.png).
-
 <p align="center">
   <a href="https://www.tedfordmedia.com">
     <img alt="Gatsby" src="https://github.com/TedfordMedia/TedfordMedia-Gatsby/blob/main/src/images/square_logo.png" height="160" />
