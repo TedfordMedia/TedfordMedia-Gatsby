@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'  
 import { Canvas } from "@react-three/fiber"  
 import * as THREE from 'three' 
-import LogoTedfordMedia from "../../../../helpers/Tedmedialogotedb.js";  
+import LogoTedfordMedia from "@helpers/Tedmedialogotedb.js";  
 
 function Dolighting({ brightness, color }) {
   return (

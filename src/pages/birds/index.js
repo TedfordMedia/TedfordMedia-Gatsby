@@ -1,20 +1,20 @@
 import * as THREE from 'three'
-import React, { Suspense, useRef, useMemo , useState,useEffect} from 'react'
+import React, { Suspense, useRef, useMemo, useState, useEffect } from 'react'
 import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fiber'
-import { OrbitControls, Sky, useTexture, Html } from '@react-three/drei' 
+import { OrbitControls, Sky, useTexture, Html } from '@react-three/drei'
 import { css } from '@emotion/core'
- import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
- import Layout from "../../components/layoutwidellh"   
-import Robot from "../../helpers/Robot6dance.js";
- var i = 0;
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import Layout from "@components/layoutwidellh"
+import Robot from "@helpers/Robot6dance.js";
+var i = 0;
 function Box() {
-  const myytexture = useTexture('./images/tedmedlogos/square_logo.png')   
- 
-  const ref = useRef() 
+  const myytexture = useTexture('./images/tedmedlogos/square_logo.png')
+
+  const ref = useRef()
   return (
-    <mesh position={[0,0,0]} ref={ref} scale={20}>
+    <mesh position={[0, 0, 0]} ref={ref} scale={20}>
       <boxGeometry />
-      <meshStandardMaterial  color={"white"} map={myytexture} />
+      <meshStandardMaterial color={"white"} map={myytexture} />
     </mesh>
   )
 }
@@ -58,34 +58,34 @@ function Birds() {
     return <Bird key={i} position={[x, y, z]} rotation={[0, x > 0 ? Math.PI : 0, 0]} speed={speed} factor={factor} url={`/${bird}.glb`} />
   })
 }
-const MyPage = (props) => (   
- <Layout  css={css`  
-      `}>    
-      <div  className={'mydiv'}       
-        css={css` 
+const MyPage = (props) => (
+  <Layout css={css`  
+      `}>
+    <div className={'mydiv'}
+      css={css` 
         height: 100%;
         overflow: hidden;
-      `}>  
-        <Canvas 
-            style={{ height: "100%", width: "100%" }}  lookAt={[0, -10, 2]} 
-            camera={{ position: [0, 2, 50], fov: 75, near: 1, far: 400 }}>
-            <pointLight position={[100, 100, 100]} intensity={0.1}/>
-            <pointLight position={[-100, -100, -100]} />
-            <ambientLight intensity={.5} />
+      `}>
+      <Canvas
+        style={{ height: "100%", width: "100%" }} lookAt={[0, -10, 2]}
+        camera={{ position: [0, 2, 50], fov: 75, near: 1, far: 400 }}>
+        <pointLight position={[100, 100, 100]} intensity={0.1} />
+        <pointLight position={[-100, -100, -100]} />
+        <ambientLight intensity={.5} />
 
-            <Suspense fallback={<Html><h1 style={{color:'blue'}}>Loading...</h1></Html>}>  
-                <Birds/>
-                <Box /> 
-            </Suspense>
-            <Suspense fallback={null}>    
-                <Robot position={[0, 10, -0]} scale={[10,10,10]} castShadow/>  
-            </Suspense>   
-            <Sky scale={1000} sunPosition={[500, 150, -1000]} turbidity={0.1} />
-            <OrbitControls  maxDistance={50} maxPolarAngle={Math.PI / 2} autoRotate autoRotateSpeed={-.8}/>
-        </Canvas>
-      </div>
-  
-  </Layout> 
+        <Suspense fallback={<Html><h1 style={{ color: 'blue' }}>Loading...</h1></Html>}>
+          <Birds />
+          <Box />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Robot position={[0, 10, -0]} scale={[10, 10, 10]} castShadow />
+        </Suspense>
+        <Sky scale={1000} sunPosition={[500, 150, -1000]} turbidity={0.1} />
+        <OrbitControls maxDistance={50} maxPolarAngle={Math.PI / 2} autoRotate autoRotateSpeed={-.8} />
+      </Canvas>
+    </div>
+
+  </Layout>
 )
-  
+
 export default MyPage  
