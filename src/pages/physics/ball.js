@@ -6,7 +6,7 @@ import { useSphere } from "@react-three/cannon";
 const Ball = ({ position, color }) => {
   const [ballRef] = useSphere(() => ({ mass: 1, position: position }));
 
-  const bw = useLoader(THREE.TextureLoader, "/bw.png");
+  const bw = useLoader(THREE.TextureLoader, "./images/tedmedlogos/square_logo.png");
   bw.wrapS = THREE.RepeatWrapping;
   bw.wrapT = THREE.RepeatWrapping;
   bw.repeat.set(3, 3);
