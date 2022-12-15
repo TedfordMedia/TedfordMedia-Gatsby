@@ -29,7 +29,7 @@ const LivingRoomDemo = ({ props }) => (
 
         const fogColor = new THREE.Color(0xffffff);
         scene.background = fogColor;
-        scene.fog = new THREE.Fog(fogColor, 0.0025, 80);
+        // scene.fog = new THREE.Fog(fogColor, 0.0025, 80);
         gl.setPixelRatio(window.devicePixelRatio);
       }}
     >
@@ -41,7 +41,6 @@ const LivingRoomDemo = ({ props }) => (
       </Suspense>
       <OrbitControls   target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
-    {/* {props?.noSettings && <SettingsIcon />} */}
   </>
 );
 

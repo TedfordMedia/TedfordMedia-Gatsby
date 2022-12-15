@@ -12,7 +12,7 @@ function Stairs() {
 
     return (
         <Suspense fallback={null}>
-            <primitive scale={[0.1, 0.1, 0.1]} object={scene} />
+            <primitive scale={[1,1,1]} position={[0,0,0]} object={scene} />
         </Suspense>
     );
 }

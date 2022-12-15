@@ -7,6 +7,7 @@ import LivingRoomDemo from "@components/basics/livingroomdemo";
 
 const BasicContainer = () => {
   const theme = useTheme();
+  console.log('theme: ', theme.colors.primary);
   return (
     <section
       css={css`
@@ -22,7 +23,6 @@ const BasicContainer = () => {
         css={css`
           height: 100%;
           width: 100%;
-          background: ${theme.colors.blue};
           overflow: hidden;
         `}
       >

@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import useSceneStore from "/src/useSceneStore";
 
 function LivingR() {
-  const { scene } = useLoader(GLTFLoader, "/models/untitled.glb");
+  const { scene } = useLoader(GLTFLoader, "/models/lightroom2.glb");
   const exMetal = useSceneStore((state) => state.exMetal);
 
   useEffect(() => {
@@ -13,9 +13,9 @@ function LivingR() {
     // GenTools.addLightMatLighting(scene);
   }, [scene]);
 
-  useEffect(() => {
-    GenTools.applyGlass(scene);
-  }, [scene, exMetal]);
+  // useEffect(() => {
+  //   GenTools.applyGlass(scene);
+  // }, [scene, exMetal]);
 
   return (
     <Suspense fallback={null}>
