@@ -183,7 +183,7 @@ module.exports = {
       resolve: `gatsby-plugin-css-literal-loader`,
       options: { extension: ".module.scss" },
     },
-    `gatsby-plugin-client-side-redirect`, // keep it in last in list,
+    `gatsby-plugin-client-side-redirect`, // keepit in last in list,
     "gatsby-plugin-meta-redirect",
     /* Rest of the plugins */
     `gatsby-plugin-nodejs`,
