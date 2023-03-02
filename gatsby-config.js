@@ -95,7 +95,7 @@ module.exports = {
             type: "image/png",
           },
           {
-            src: "/android-chrome-512x512 copy.png",
+            src: "/android-chrome-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
