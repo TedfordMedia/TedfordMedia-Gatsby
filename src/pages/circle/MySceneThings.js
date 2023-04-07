@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { Bird } from "./Phoenix_bird";
 
 function Line() {
-  const ref = useRef()
+  // const ref = useRef()
 
   const speed = .05;
 

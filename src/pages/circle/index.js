@@ -13,7 +13,7 @@ function Logo(props) {
   const ref = useRef()
   return (
     <mesh {...props} rotation={[-Math.PI / 2, 0, 0]} receiveShadow ref={ref} scale={25}>
-      <planeBufferGeometry />
+      <planeGeometry />
       <meshStandardMaterial color={"white"} map={myytexture} />
     </mesh>
   )
