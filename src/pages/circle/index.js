@@ -39,11 +39,11 @@ const MyPage = (props) => (
         }}>
 
         <ambientLight intensity={.4} />
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <Logo position={[0, 0, 1.6]} />
-        </Suspense>
+        </Suspense> */}
         <Floor />
-        <MySceneThings />
+        {/* <MySceneThings /> */}
         <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} />
         <OrbitControls
           enableDamping
