@@ -2,13 +2,12 @@ import { useFrame } from "@react-three/fiber";
 import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from "three";
-import MySceneThings from "./MySceneThings";
-export function Bird(props) {
+
+export default function Bird(props) {
   const birdRef = useRef()
   const { nodes, materials, animations } = useGLTF('/phoenix_bird.glb')
   const { actions } = useAnimations(animations, birdRef)
- 
- 
+  
   useEffect(() => {
     actions['Take 001'].play()
   });
