@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
 ///import three
 import * as THREE from "three";
-import { Bird } from "./Phoenix_bird";
+import Bird from "./Phoenix_bird";
 
 function Line() {
   // const ref = useRef()
@@ -47,7 +47,7 @@ function Line() {
 const MySceneThings = () => {
 
   return (
-    <group name="lighting"> 
+    <group name="lighting">
       <directionalLight position={[7, 59, 7]}
         shadow-mapSize-height={1024}
         shadow-mapSize-width={1024}

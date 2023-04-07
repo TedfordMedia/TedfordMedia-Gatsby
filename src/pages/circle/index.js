@@ -38,7 +38,7 @@ const MyPage = (props) => (
           gl.toneMapping = THREE.ACESFilmicToneMapping;
         }}>
 
-        <ambientLight intensity={.3} />
+        <ambientLight intensity={.4} />
         <Suspense fallback={null}>
           <Logo position={[0, 0, 1.6]} />
         </Suspense>

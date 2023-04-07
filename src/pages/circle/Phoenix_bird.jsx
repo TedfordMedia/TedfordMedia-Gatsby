@@ -3,11 +3,11 @@ import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from "three";
 
-export default function Bird(props) {
+function Bird(props) {
   const birdRef = useRef()
   const { nodes, materials, animations } = useGLTF('/phoenix_bird.glb')
   const { actions } = useAnimations(animations, birdRef)
-  
+
   useEffect(() => {
     actions['Take 001'].play()
   });
@@ -24,7 +24,7 @@ export default function Bird(props) {
   });
   return (
     <group ref={birdRef} {...props} dispose={null} >
-      <group name="Sketchfab_Scene" position={[0,20,0]} rotation={[0, -Math.PI / 2, 0]}>
+      <group name="Sketchfab_Scene" position={[0, 20, 0]} rotation={[0, -Math.PI / 2, 0]}>
         <group name="Sketchfab_model" position={[-0.62, 0, -17.14]} rotation={[-Math.PI / 2, 0, 0.05]}>
           <group name="5f59736c86d4457fa045aec4aea6b7e0fbx" rotation={[Math.PI / 2, 0, 0]}>
             <group name="Object_2">
@@ -46,3 +46,4 @@ export default function Bird(props) {
 }
 
 useGLTF.preload('/phoenix_bird.glb')
+export default Bird;
