@@ -4,10 +4,9 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
 import { css } from '@emotion/core'
 import Layout from "../../components/layoutwidellh"
-import Robot from "../../helpers/Robot6dance.js";
 import MySceneThings from "./MySceneThings";
 import Floor from "./Floor";
- 
+
 function Logo(props) {
   const myytexture = useTexture('./images/tedmedlogos/square_logo.png')
 
@@ -21,8 +20,7 @@ function Logo(props) {
 }
 
 const MyPage = (props) => (
-  <Layout css={css`  
-      `}>
+  <Layout>
     <div className={'mydiv'}
       css={css` 
         height: 100%;
@@ -39,16 +37,19 @@ const MyPage = (props) => (
           gl.shadowMap.autoUpdate = true;
           gl.toneMapping = THREE.ACESFilmicToneMapping;
         }}>
- 
-        <ambientLight intensity={.5} /> 
+
+        <ambientLight intensity={.3} />
         <Suspense fallback={null}>
           <Logo position={[0, 0, 1.6]} />
-          {/* <Robot position={[-3, 0, -2]} scale={[1, 1, 1]} castShadow /> */}
         </Suspense>
         <Floor />
         <MySceneThings />
         <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} />
-        <OrbitControls maxDistance={50} autoRotate autoRotateSpeed={-.2}/>
+        <OrbitControls
+          enableDamping
+          dampingFactor={0.2}
+          maxDistance={50}
+          autoRotate autoRotateSpeed={-.2} />
       </Canvas>
     </div>
 
