@@ -23,22 +23,13 @@ function Line() {
     return new THREE.CatmullRomCurve3(points, true);
   }, [])
 
-  // useLayoutEffect(() => {
-  //   const points = curve.getPoints(50);
-  //   ref.current.geometry = new THREE.BufferGeometry().setFromPoints(points);
-  // }, [])
-
   return (
     <>
       <group position={[0, 1.5, 0]}>
-        {/* <Suspense fallback={null}>
-          <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
-        </Suspense> */}
+        <Suspense fallback={null}>
+          {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+        </Suspense>
       </group >
-      {/* <line ref={ref}>
-        <bufferGeometry />
-        <lineBasicMaterial color="hotpink" />
-      </line>  */}
     </>
   )
 }
@@ -63,6 +54,3 @@ const MySceneThings = (props) => {
 }
 
 export default MySceneThings
-
- 
-

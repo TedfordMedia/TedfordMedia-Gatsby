@@ -4,8 +4,6 @@ import { css } from "@emotion/core";
 import Layout from "@components/LayoutX";
 import { useTheme } from "@components/Theming";
 import MainFloorDemo from "@components/basics/mainfloordemo";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import {  useLoader, useFrame } from '@react-three/fiber'
 
 const BasicContainer = () => {
   const theme = useTheme();
