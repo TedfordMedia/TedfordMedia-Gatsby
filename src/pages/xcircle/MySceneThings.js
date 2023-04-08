@@ -4,15 +4,12 @@ import React, { useRef, useLayoutEffect, useMemo } from "react";
 import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
 
-import React, { useRef } from "react";
-import { Box } from "@react-three/drei";
+import React, { useRef } from "react"; 
  
 
 function Line() {
   // const ref = useRef()
-
-  const speed = .05;
-
+ 
   const curve = useMemo(() => {
     const radius = 8; // radius of the circle
     const angleStep = (2 * Math.PI) / 8; // angle between adjacent control points
@@ -29,7 +26,6 @@ function Line() {
   }, [])
 
   // useLayoutEffect(() => {
-  //   curve.closed = true;
   //   const points = curve.getPoints(50);
   //   ref.current.geometry = new THREE.BufferGeometry().setFromPoints(points);
   // }, [])
@@ -37,9 +33,9 @@ function Line() {
   return (
     <>
       <group position={[0, 1.5, 0]}>
-        {/* <Suspense fallback={null}>
-          <Bird curve={curve} speed={speed} scale={[.002, .002, .002]} position={[0, 0, .1]} />
-        </Suspense> */}
+        <Suspense fallback={null}>
+          <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
+        </Suspense>
       </group >
       {/* <line ref={ref}>
         <bufferGeometry />
@@ -50,43 +46,25 @@ function Line() {
 }
 
 
-const MySceneThings = (props) => {
-  const webcamRef = useRef(null);
+const MySceneThings = (props) => { 
 
   return (
-    <Box
-      receiveShadow
-      args={[30, 30, 100]}
-      rotation={[-Math.PI / 2, 0, 0]}
-      position={[0, -5.01, 1.6]}
-    >
-      <meshStandardMaterial attach="material" color={"#888845"} />
-    </Box>
+    <group name="lighting">
+      <directionalLight position={[7, 59, 7]}
+        shadow-mapSize-height={1024}
+        shadow-mapSize-width={1024}
+        shadow-radius={4}
+        intensity={.2} castShadow
+        shadow-camera-top={20}
+        shadow-camera-bottom={-20}
+        shadow-camera-left={-20}
+        shadow-camera-right={20} />
+      <Line />
+    </group>
   )
 }
 
 export default MySceneThings
 
-
-
-
-// const MySceneThings = () => {
-
-//   return (
-//     <group name="lighting">
-//       <directionalLight position={[7, 59, 7]}
-//         shadow-mapSize-height={1024}
-//         shadow-mapSize-width={1024}
-//         shadow-radius={4}
-//         intensity={.2} castShadow
-//         shadow-camera-top={20}
-//         shadow-camera-bottom={-20}
-//         shadow-camera-left={-20}
-//         shadow-camera-right={20} />
-//       <Line />
-//     </group>
-//   );
-// };
-
-// export default MySceneThings;
+ 
 
