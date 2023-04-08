@@ -1,5 +1,5 @@
 
-import React, { useRef, useLayoutEffect, useMemo } from "react";
+import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
 ///import three
 import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
