@@ -31,9 +31,9 @@ function Line() {
   return (
     <>
       <group position={[0, 1.5, 0]}>
-        {/* <Suspense fallback={null}>
-          <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
-        </Suspense> */}
+        <Suspense fallback={null}>
+          {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+        </Suspense>
       </group >
       {/* <line ref={ref}>
         <bufferGeometry />
