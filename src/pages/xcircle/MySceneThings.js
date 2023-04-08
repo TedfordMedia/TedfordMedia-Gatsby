@@ -1,6 +1,6 @@
 
 
-import React from "react";
+import React, {useRef} from "react";
 import { Box } from "@react-three/drei";
 
  import LogoTedfordMedia from "@helpers/Tedmedialogosilver"; 
