@@ -4,7 +4,7 @@ import React, { useRef, useLayoutEffect, useMemo } from "react";
 import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
 
-import React, { useRef } from "react"; 
+import { useRef } from "react"; 
  
 
 function Line() {
