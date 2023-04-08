@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { useRef } from 'react'
+import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
 import { css } from '@emotion/core'
@@ -39,9 +39,9 @@ const MyPage = (props) => (
         }}>
 
         <ambientLight intensity={.4} />
-        {/* <Suspense fallback={null}>
+        <Suspense fallback={null}>
           <Logo position={[0, 0, 1.6]} />
-        </Suspense> */}
+        </Suspense>
         <Floor />
         {/* <MySceneThings /> */}
         <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} />
