@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { OrbitControls, Html } from "@react-three/drei";
-import { Canvas, extend, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import Floor15 from "@components/floorpart/Floor15";
 import Floor from "@components/basics/flooring/Floor";
 import SimpleLighting from "@components/basics/lighting/SimpleLighting";
-import SettingsIcon from "@components/ui/SettingsIcon";
+// import SettingsIcon from "@components/ui/SettingsIcon";
 
 const MainFloorDemo = ({ props }) => (
   <>
@@ -39,7 +39,7 @@ const MainFloorDemo = ({ props }) => (
       <Suspense fallback={<Html>loading</Html>}>
         <Floor15 />
       </Suspense>
-      <OrbitControls autoRotate autoRotateSpeed={8.2} enableZoom={false}  target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
+      <OrbitControls autoRotate autoRotateSpeed={8.2} enableZoom={false} target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
     {/* {props?.noSettings && <SettingsIcon />} */}
   </>

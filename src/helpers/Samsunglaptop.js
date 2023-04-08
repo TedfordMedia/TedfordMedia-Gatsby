@@ -1,13 +1,13 @@
- 
+
 import React, { useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { Html } from '@react-three/drei';
 import '../styles.css'
 
 export default function Model(props) {
   const group = useRef()
-  const occluderRef =  useRef()
-  const { nodes, materials, animations } = useGLTF('/samsunglaptop.glb')
+  const occluderRef = useRef()
+  const { nodes, materials } = useGLTF('/samsunglaptop.glb')
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -19,18 +19,18 @@ export default function Model(props) {
               <mesh geometry={nodes.lid_gun_0.geometry} material={nodes.lid_gun_0.material} />
               <mesh geometry={nodes.lid_samsung_0.geometry} material={materials.samsung} />
               <mesh geometry={nodes.lid_scr_0.geometry} material={materials.material_2} />
-              <group position={[-.5, -.3, .5]}  >      
-                  <Html className="html-story-label" occlude>
-                    <div className="label labeldiv">Second test label</div>
-                  </Html>
+              <group position={[-.5, -.3, .5]}  >
+                <Html className="html-story-label" occlude>
+                  <div className="label labeldiv">Second test label</div>
+                </Html>
               </group>
             </group>
             <group position={[0, 1.72, -25.79]} rotation={[-Math.PI / 2, 0, 0]} scale={[100, 100, 100]}>
               <mesh geometry={nodes.body_alum_0.geometry} material={nodes.body_alum_0.material} />
-              <group position={[0.9, -0.2, 0]}  >      
-                  <Html occlude>
-                    <div className="label labeldiv">Test Label!</div>
-                  </Html>
+              <group position={[0.9, -0.2, 0]}  >
+                <Html occlude>
+                  <div className="label labeldiv">Test Label!</div>
+                </Html>
               </group>
 
               <mesh geometry={nodes.body_buton_0.geometry} material={materials.buton} />

@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { Suspense, useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useTexture, Html, softShadows, Shadow, MeshWobbleMaterial } from '@react-three/drei'
+import { OrbitControls, useTexture, Html, softShadows, Shadow } from '@react-three/drei'
 import { css } from '@emotion/core'
 import LogoTedfordMedia from "@helpers/Tedmedia3dlogo.js";  
 import Layout from "@components/layoutwidellh"  

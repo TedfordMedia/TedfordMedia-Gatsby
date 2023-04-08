@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import React, { Suspense, useRef, useMemo , useState,useEffect} from 'react'
-import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fiber'
+import { Canvas,   useLoader, useFrame } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, Html } from '@react-three/drei' 
 import { css } from '@emotion/core'
  import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'

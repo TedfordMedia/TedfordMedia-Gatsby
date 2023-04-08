@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { OrbitControls, Html, Stars } from "@react-three/drei";
-import { Canvas, extend, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import Shader1 from "@components/shaders/Shader1";
 import Shader2 from "@components/shaders/Shader2";
@@ -25,7 +25,7 @@ const ShaderThings = ({ props }) => (
         <Shader2 position={[3, 0, -1]} />
         <Shader3 position={[0, 0, -3]} />
       </Suspense>
-      <OrbitControls   autoRotateSpeed={.15} target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
+      <OrbitControls autoRotateSpeed={.15} target={[0, 0, 0]} enableDamping dampingFactor={0.05} />
     </Canvas>
   </>
 );
