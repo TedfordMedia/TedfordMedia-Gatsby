@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import React, { Suspense, useRef } from 'react'
+import { Suspense, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
 import { css } from '@emotion/core'
