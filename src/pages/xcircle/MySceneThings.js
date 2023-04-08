@@ -5,8 +5,6 @@ import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
 
 
- 
-
 function Line() {
   // const ref = useRef()
  
