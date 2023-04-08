@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, Suspense, useFrame } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
-// import * as THREE from "three";
+import * as THREE from "three";
 
 export default function Bird(props) {
   // const birdRef = useRef()
@@ -21,8 +21,9 @@ export default function Bird(props) {
   //     tangent
   //   );
   // });
-  return (<></>
-    // <Suspense fallback={<Html>loading</Html>}>
+  return (
+    <>
+      <Suspense fallback={<Html>loading</Html>}>
     //   <group ref={birdRef} {...props} dispose={null} >
     //     <group name="Sketchfab_Scene" position={[0, 20, 0]} rotation={[0, -Math.PI / 2, 0]}>
     //       <group name="Sketchfab_model" position={[-0.62, 0, -17.14]} rotation={[-Math.PI / 2, 0, 0.05]}>
@@ -42,7 +43,8 @@ export default function Bird(props) {
     //       </group>
     //     </group>
     //   </group>
-    // </Suspense>
+      </Suspense>
+    </>
   )
 }
 
