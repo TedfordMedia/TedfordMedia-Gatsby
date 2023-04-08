@@ -5,11 +5,11 @@ import * as THREE from "three";
 export default function Bird(props) {
   const birdRef = useRef()
   const { nodes, materials, animations } = useGLTF('/models/phoenix_bird.glb')
-  // const { actions } = useAnimations(animations, birdRef)
+  const { actions } = useAnimations(animations, birdRef)
 
-  // useEffect(() => {
-  //   actions['Take 001'].play()
-  // });
+  useEffect(() => {
+    actions['Take 001'].play()
+  });
 
   // useFrame(({ clock }) => {
   //   const time = (clock.elapsedTime * props.speed) % 1.0; // multiply time by speed
@@ -25,7 +25,7 @@ export default function Bird(props) {
     <>
       <Suspense fallback={<Html>loading</Html>}>
         <group ref={birdRef} {...props} dispose={null} >
-          {/* <group name="Sketchfab_Scene" position={[0, 20, 0]} rotation={[0, -Math.PI / 2, 0]}>
+          <group name="Sketchfab_Scene" position={[0, 20, 0]} rotation={[0, -Math.PI / 2, 0]}>
           <group name="Sketchfab_model" position={[-0.62, 0, -17.14]} rotation={[-Math.PI / 2, 0, 0.05]}>
             <group name="5f59736c86d4457fa045aec4aea6b7e0fbx" rotation={[Math.PI / 2, 0, 0]}>
                <group name="Object_2">
@@ -41,7 +41,7 @@ export default function Bird(props) {
               </group>
             </group>
           </group>
-         </group> */}
+         </group>
         </group>
       </Suspense>
     </>
