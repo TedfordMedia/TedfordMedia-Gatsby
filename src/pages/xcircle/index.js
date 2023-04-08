@@ -8,7 +8,7 @@ import MySceneThings from "./MySceneThings";
 import Floor from "./Floor";
 
 function Logo(props) {
-  const myytexture = useTexture('./images/square_logo.png')
+  const myytexture = useTexture('./square_logo.png')
 
   const ref = useRef()
   return (
