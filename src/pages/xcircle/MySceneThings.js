@@ -1,13 +1,13 @@
 
 import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
-///import three
+import { Html } from "@react-three/drei";
 import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
 
 
 function Line() {
   // const ref = useRef()
- 
+
   const curve = useMemo(() => {
     const radius = 8; // radius of the circle
     const angleStep = (2 * Math.PI) / 8; // angle between adjacent control points
@@ -26,8 +26,8 @@ function Line() {
   return (
     <>
       <group position={[0, 1.5, 0]}>
-        <Suspense fallback={null}>
-          {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+        <Suspense fallback={<Html>loading</Html>}>
+          <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
         </Suspense>
       </group >
     </>
@@ -35,7 +35,7 @@ function Line() {
 }
 
 
-const MySceneThings = (props) => { 
+const MySceneThings = (props) => {
 
   return (
     <group name="lighting">
