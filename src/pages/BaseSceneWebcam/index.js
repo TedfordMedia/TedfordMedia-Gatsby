@@ -100,7 +100,7 @@ export default MyPage
 // import React, { Suspense,  useEffect, useCallback, useState } from 'react'
 // import { Canvas, useTexture, useFrame } from '@react-three/fiber' 
 // import Layout from "../../components/layoutwidellh"    
-// import LogoTedfordMedia from "../../helpers/Tedmedia3dlogo.js";  
+// import LogoTedfordMedia from "../.../images/Tedmedia3dlogo.js";  
 // const scale = point => -(point - 70) / 50;
 
  
