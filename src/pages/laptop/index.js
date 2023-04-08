@@ -1,7 +1,7 @@
 
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Environment, Html } from '@react-three/drei' 
+import { useGLTF, OrbitControls, Environment, Html } from '@react-three/drei' 
 import { css } from '@emotion/core'
 import Laptop from "@helpers/Samsunglaptop.js"; 
 import Layout from "@components/layoutwidellh"  
