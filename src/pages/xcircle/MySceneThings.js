@@ -1,5 +1,5 @@
 
-import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
+import React, { useRef, useLayoutEffect, useMemo } from "react";
 ///import three
 import * as THREE from "three";
 import Bird from "@helpers/Phoenix_bird";
@@ -32,7 +32,7 @@ function Line() {
     <>
       <group position={[0, 1.5, 0]}>
         {/* <Suspense fallback={null}> */}
-          {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+          <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
         {/* </Suspense> */}
       </group >
       {/* <line ref={ref}>
