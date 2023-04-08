@@ -3,7 +3,7 @@
 import React from "react";
 import { Box } from "@react-three/drei";
 
- 
+ import LogoTedfordMedia from "@helpers/Tedmedialogosilver"; 
 
 const MySceneThings = (props) => { 
   const webcamRef = useRef(null);
