@@ -8,7 +8,7 @@ import { css } from '@emotion/core'
 import Robot from "@helpers/Robot6dance.js";
  var i = 0;
 function Box() {
-  const myytexture = useTexture('./square_logo.png')   
+  const myytexture = useTexture('./x.png')   
  
   const ref = useRef() 
   return (
