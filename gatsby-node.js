@@ -81,6 +81,15 @@ exports.createPages = ({ actions, graphql }) =>
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    devServer: {
+      onError: (error, devServer) => {
+        if (error.code === "EADDRINUSE") {
+          console.log(`Port ${devServer.port} is already in use. Try running on a different port.`)
+        } else {
+          console.log(error)
+        }
+      },
+    },
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"],
       alias: {
@@ -141,8 +150,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const slug =
       parent.sourceInstanceName === "legacy"
         ? `blog/${node.frontmatter.date
-            .split("T")[0]
-            .replace(/-/g, "/")}/${titleSlugged}`
+          .split("T")[0]
+          .replace(/-/g, "/")}/${titleSlugged}`
         : node.frontmatter.slug || titleSlugged;
 
     createNodeField({
