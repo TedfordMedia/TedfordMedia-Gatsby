@@ -4,8 +4,8 @@ import { Canvas, extend, useThree, useLoader, useFrame } from '@react-three/fibe
 import { OrbitControls, Sky, useTexture, Html } from '@react-three/drei' 
 import { css } from '@emotion/core'
  import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
- import Layout from "../../components/layoutwidellh"   
-import Robot from "../../helpers/Robot6dance.js";
+ import Layout from "@components/layoutwidellh"   
+import Robot from "@helpers/Robot6dance.js";
  var i = 0;
 function Box() {
   const myytexture = useTexture('./images/tedmedlogos/square_logo.png')   

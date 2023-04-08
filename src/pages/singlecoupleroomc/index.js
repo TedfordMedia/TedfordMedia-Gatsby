@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Html } from "@react-three/drei";
 import { css } from "@emotion/core";
-import EnvSingleCouple from "../../helpers/Env_SwankyOffice5.js";
-import Layout from "../../components/layoutwidellh";
+import EnvSingleCouple from "@helpers/Env_SwankyOffice5.js";
+import Layout from "@components/layoutwidellh";
 
 const MyPage = (props) => (
   <Layout>

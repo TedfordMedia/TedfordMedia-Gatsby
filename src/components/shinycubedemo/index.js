@@ -3,8 +3,8 @@ import React, { Suspense } from 'react'
 import { OrbitControls, Environment  } from '@react-three/drei'
 import { Canvas } from "@react-three/fiber"  
 import * as THREE from 'three'
-import MyFloor from "../../components/basics/flooring/bluecubeish"; 
-import LogoTedfordMedia from "../../helpers/Tedmedialogotedb.js";  
+import MyFloor from "@components/basics/flooring/bluecubeish"; 
+import LogoTedfordMedia from "@helpers/Tedmedialogotedb.js";  
 
 function Dolighting({ brightness, color }) {
   return (

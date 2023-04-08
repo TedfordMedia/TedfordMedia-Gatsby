@@ -11,8 +11,8 @@ import { OrbitControls, Sky, useTexture, Html } from "@react-three/drei";
 import { Water } from "three-stdlib";
 import { css } from "@emotion/core";
 
-import Sub from "../../helpers/Submarine.js";
-import Layout from "../../components/layoutwidellh";
+import Sub from "@helpers/Submarine.js";
+import Layout from "@components/layoutwidellh";
 
 extend({ Water });
 

@@ -3,9 +3,9 @@ import Layout from "../../components/layoutwide"
 import { Canvas, useFrame} from "@react-three/fiber"
 import { Html, OrbitControls,useTexture } from '@react-three/drei';
 import * as THREE from 'three' 
-import Samba from "../../helpers/Samba";  
+import Samba from "@helpers/Samba";  
 import { Plane, Sphere } from '@react-three/drei'; 
-import LogoTedfordMedia from "../../helpers/Tedmedialogosilver"; 
+import LogoTedfordMedia from "@helpers/Tedmedialogosilver"; 
  
 
 function TheFollowCube(){ 
