@@ -2,7 +2,9 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
-
+import LightTools from "./LightMapper";
+// LightTools.helloWorld();
+console.log(LightTools)
 function setupLightmapShader(node, origMaterial) {
   let baseColour = new THREE.Vector4(
     origMaterial.color.r,
