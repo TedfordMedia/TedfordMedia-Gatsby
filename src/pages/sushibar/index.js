@@ -11,7 +11,7 @@ const MyPage = (props) => (
     <Canvas
       shadows
       camera={{
-        position: [0, 3, 10.01],
+        position: [5, 4, 8],
         fov: 75,
         near: 0.01,
         far: 100,
