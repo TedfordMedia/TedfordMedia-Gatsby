@@ -26,9 +26,9 @@ function Line() {
   return (
     <>
       <group position={[0, 1.5, 0]}>
-        <Suspense fallback={<Html>loading</Html>}>
+        {/* <Suspense fallback={<Html>loading</Html>}>
           <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
-        </Suspense>
+        </Suspense> */}
       </group >
     </>
   )
