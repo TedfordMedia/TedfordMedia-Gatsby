@@ -3,7 +3,7 @@ import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky, useTexture, } from '@react-three/drei'
 import { css } from '@emotion/core'
-import Layout from "../../components/layoutwidellh"
+import Layout from "@components/layoutwidellh"
 import MySceneThings from "./MySceneThings";
 import Floor from "./Floor";
 
@@ -43,10 +43,10 @@ const MyPage = (props) => (
           <Logo position={[0, 0, 1.6]} />
         </Suspense>
         <Floor />
-        <Suspense fallback={null}>
-          <MySceneThings />
-        </Suspense>
-        <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} />
+
+        <MySceneThings />
+
+        {/* <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} /> */}
         <OrbitControls
           enableDamping
           dampingFactor={0.2}
