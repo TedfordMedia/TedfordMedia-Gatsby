@@ -2,7 +2,7 @@ import React, { useRef, useEffect, Suspense, useFrame } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import * as THREE from "three";
 
-export default function Bird(props) {
+export default function Model(props) {
   const birdRef = useRef()
   const { nodes, materials, animations } = useGLTF('/models/phoenix_bird.glb')
   // const { actions } = useAnimations(animations, birdRef)
