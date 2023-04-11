@@ -50,7 +50,8 @@ const MySceneThings = (props) => {
         shadow-camera-right={20} />
 
       <Suspense fallback={<Html>loading</Html>}>
-        <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} />
+        {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+        <Bird scale={[.002, .002, .002]} position={[0, 0, .1]} />
       </Suspense>
       {/* <Line /> */}
     </group>
