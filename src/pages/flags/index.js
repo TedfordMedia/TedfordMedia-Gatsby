@@ -10,6 +10,7 @@ import CountryCube from './CountryCube'
 const MyPage = () => {
   const [countries, setCountries] = useState([]);
   const [totalPopulation, setTotal] = useState([]);
+  const [millionsPerMetre, setMillionsPerMetre] = useState([]);
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -25,6 +26,7 @@ const MyPage = () => {
           name: country.name.common,
           population: country.population
         }));
+
         setCountries(countriesData);
         setTotal(top30Countries.reduce((total, country) => {
           return total + country.population;
@@ -57,7 +59,7 @@ const MyPage = () => {
 
           {countries.map(country => (
             <Suspense key={country.name} fallback={<Html>Loading...</Html>}>
-              <CountryCube key={country.name} country={country} totalPopulation={totalPopulation} countries={countries}/>
+              <CountryCube key={country.name} country={country} totalPopulation={totalPopulation} countries={countries} />
             </Suspense>
           ))}
 

@@ -10,20 +10,26 @@ function CountryCube(props) {
   const scale = 1;
   const flagWidth = 3;
   const flagHeight = 2;
+  const scaleOfLargest = 4;
   const tmpPos = props.country.index * (scale * 1.1);
   const [map1] = useLoader(TextureLoader, [flagUrl]);
-  console.log('props.totalPopulation', props.totalPopulation);
   const populationPreceeding = props.countries.reduce((total, country) => {
     if (country.index < props.country.index) {
       return total + country.population;
     }
     return total;
   }, 0)
-  console.log('hello populatin preceeding ', populationPreceeding)
+
+  const largestPopulation = props.countries[0].population;
+  const millionsPerMetre = largestPopulation / scaleOfLargest;
+
+  console.log('millionsPerMetre', millionsPerMetre);
+  // console.log('populationPreceeding/1000000 * millionsPerMetre', populationPreceeding / millionsPerMetre)
+  console.log('this percentage = props.country.population/largestPopulation', props.country.population / largestPopulation)
 
   return (
-    <mesh scale={4}
-      position={[flagWidth * props.country.index * 1.1, 0, 0]}
+    <mesh scale={scaleOfLargest * props.country.population / largestPopulation}
+      position={[(populationPreceeding / millionsPerMetre) * flagWidth, 0, 0]}
     >
       <Html
         transform
