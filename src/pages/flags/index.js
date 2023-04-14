@@ -45,7 +45,7 @@ const MyPage = () => {
         <Canvas
           shadows
           shadowMap
-          camera={{ position: [38, 6, 38], fov: 42 }}
+          camera={{ position: [43, 6, 30], fov: 36 }}
           onCreated={({ gl, camera, scene }) => {
             scene.background = new THREE.Color(0xa2b9e7);
             gl.shadowMap.enabled = true;
@@ -56,11 +56,15 @@ const MyPage = () => {
 
           <ambientLight intensity={.4} />
 
-          {countries.map(country => (
-            <Suspense key={country.name} fallback={<Html>Loading...</Html>}>
-              <CountryCube key={country.name} country={country} totalPopulation={totalPopulation} countries={countries} />
-            </Suspense>
-          ))}
+          <group position={[-7, 0, 0]}>
+            {countries.map(country => (
+              <Suspense key={country.name} fallback={<Html>Loading...</Html>}>
+
+
+                <CountryCube key={country.name} country={country} totalPopulation={totalPopulation} countries={countries} />
+              </Suspense>
+            ))}
+          </group>
 
           <OrbitControls
             target={[17, 0, 0]}
