@@ -11,6 +11,8 @@ function CountryCube(props) {
   const flagWidth = 3;
   const flagHeight = 2;
   const scaleOfLargest = 4;
+  const desiredWidth = 20;
+
   const tmpPos = props.country.index * (scale * 1.1);
   const [map1] = useLoader(TextureLoader, [flagUrl]);
 
@@ -22,11 +24,11 @@ function CountryCube(props) {
   }, 0)
 
   const largestPopulation = props.countries[0].population;
-  const millionsPerMetre = largestPopulation / scaleOfLargest;
+  const millionsPerMetre = props.totalPopulation / desiredWidth;
 
   return (
     <mesh name={'mesh' + props.country.name} scale={scaleOfLargest * props.country.population / largestPopulation}
-      position={[(populationPreceeding / millionsPerMetre) * flagWidth, 0, 0]}
+      position={[populationPreceeding / millionsPerMetre, 0, 0]}
     >
       <Html
         transform
