@@ -23,7 +23,7 @@ export default function Model(props) {
   // });
   return (
     // <group ref={birdRef} {...props} dispose={null} >
-    <group ref={birdRef} {...props} dispose={null} >
+    <group {...props} dispose={null} >
       <group name="Sketchfab_Scene" position={[0, 20, 0]} rotation={[0, -Math.PI / 2, 0]}>
         <group name="Sketchfab_model" position={[-0.62, 0, -17.14]} rotation={[-Math.PI / 2, 0, 0.05]}>
           <group name="5f59736c86d4457fa045aec4aea6b7e0fbx" rotation={[Math.PI / 2, 0, 0]}>
