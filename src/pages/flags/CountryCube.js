@@ -10,7 +10,6 @@ function CountryCube(props) {
   if (!props.countries) return (<></>);
 
   const flagUrl = props.country && props.country.flag ? props.country.flag : '';
-  const scale = 1;
   const flagWidth = 3;
   const flagHeight = 2;
   const scaleOfLargest = 4;
