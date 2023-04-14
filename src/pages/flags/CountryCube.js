@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Html } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
 import "./style.css";
+
 
 function CountryCube(props) {
   const flagUrl = props.country && props.country.flag ? props.country.flag : '';
@@ -28,14 +29,25 @@ function CountryCube(props) {
   // console.log('populationPreceeding/1000000 * millionsPerMetre', populationPreceeding / millionsPerMetre)
   console.log('this percentage = props.country.population/largestPopulation', props.country.population / largestPopulation)
 
+
+    // const { scene } = useThree();
+
+    // useEffect(() => {
+    //   scene.traverse((child) => {
+    //     if (child.isMesh === true) {
+    //       console.log('i got child', child.name)
+    //     }
+    //   });
+    // }, [scene]);
+
   return (
-    <mesh scale={scaleOfLargest * props.country.population / largestPopulation}
+    <mesh name={'mesh' + props.country.name} scale={scaleOfLargest * props.country.population / largestPopulation}
       position={[(populationPreceeding / millionsPerMetre) * flagWidth, 0, 0]}
     >
       <Html
         transform
         distanceFactor={3}
-        position={[0, 0, 0]}
+        position={[0, -1, 1.51]}
         style={{
           width: "150px",
         }}>
