@@ -2,7 +2,7 @@
 import React, { useRef, useLayoutEffect, useMemo, Suspense } from "react";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
-import Bird from "@helpers/Phoenix_bird";
+// import Bird from "@helpers/Phoenix_bird";
 
 
 // function Line() {
@@ -49,10 +49,10 @@ const MySceneThings = (props) => {
         shadow-camera-left={-20}
         shadow-camera-right={20} />
 
-      <Suspense fallback={<Html>loading</Html>}>
+      {/* <Suspense fallback={<Html>loading</Html>}> */}
         {/* <Bird curve={curve} speed={.05} scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
-        <Bird scale={[.002, .002, .002]} position={[0, 0, .1]} />
-      </Suspense>
+        {/* <Bird scale={[.002, .002, .002]} position={[0, 0, .1]} /> */}
+      {/* </Suspense> */}
       {/* <Line /> */}
     </group>
   )
