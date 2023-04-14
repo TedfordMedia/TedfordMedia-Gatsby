@@ -10,6 +10,7 @@ import CountryCube from './CountryCube'
 const MyPage = () => {
   const [countries, setCountries] = useState([]);
   const [totalPopulation, setTotal] = useState([]);
+  const [millionsPerMetre, setMillionsPerMetre] = useState([]);
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
