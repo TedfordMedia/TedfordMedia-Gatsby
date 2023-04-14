@@ -1,8 +1,8 @@
 import Layout from "@components/layoutwidellh";
 import * as THREE from 'three'
 import { css } from '@emotion/core'
-import React, { useState, useEffect } from 'react';
-import { OrbitControls } from "@react-three/drei";
+import React, { useState, useEffect, Suspense } from 'react';
+import { OrbitControls, Html } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import CountryCube from './CountryCube'
 
@@ -52,7 +52,9 @@ const MyPage = () => {
           <ambientLight intensity={.4} />
 
           {countries.map(country => (
-            <CountryCube key={country.name} country={country} />
+            <Suspense key={country.name} fallback={<Html>Loading...</Html>}>
+              <CountryCube key={country.name} country={country} />
+            </Suspense>
           ))}
 
           <OrbitControls

@@ -1,27 +1,16 @@
-import Layout from "@components/layoutwidellh";
-import * as THREE from 'three'
-import { css } from '@emotion/core'
-import React, { useState, useEffect, useRef } from 'react';
-import { OrbitControls, Html } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Floor from "@components/basics/flooring/Floor";
+import React from 'react';
+import { Html } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
+
 import "./style.css";
 
 function CountryCube(country) {
-  const meshRef = useRef(null)
   const flagUrl = country.country.flag;
-  console.log('flagurl', flagUrl);
-  const tmpPos = country.country.index;
   const scale = 1;
-  const [color, setColor] = useState('#00FF00'); // Set initial color to green
+  const tmpPos = country.country.index * (scale * 1.1);
+  const [map1] = useLoader(TextureLoader, [flagUrl]);
 
-  useEffect(() => {
-    const getRandomColor = () => {
-      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-      return randomColor;
-    };
-    setColor(getRandomColor());
-  }, []);
   return (
     <mesh
       position={[tmpPos, tmpPos, 0]}
@@ -32,11 +21,15 @@ function CountryCube(country) {
         style={{
           width: "150px",
         }}>
-        <div className="label">{country.country.name}</div>
-        <img className="flaghtmlimage" src={flagUrl} alt={`${country.country.name} flag`} />
+        <div className="label">{country.country.name} {country.country.population/1000000}m </div>
       </Html>
-      <boxGeometry args={[scale, scale, scale]} />
-      <meshStandardMaterial color={color} />
+      <boxGeometry args={[3, 2, 2]} />
+      <meshStandardMaterial attachArray="material" map={map1} />
+      <meshBasicMaterial attachArray="material" map={map1} />
+      <meshBasicMaterial attachArray="material" color="white" />
+      <meshBasicMaterial attachArray="material" color="white" />
+      <meshBasicMaterial attachArray="material" map={map1} />
+      <meshBasicMaterial attachArray="material" map={map1} />
     </mesh>
   )
 }
