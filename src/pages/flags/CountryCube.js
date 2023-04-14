@@ -6,7 +6,8 @@ import { TextureLoader } from "three";
 import "./style.css";
 
 function CountryCube(props) {
-  const flagUrl = props.country.flag;
+  const flagUrl = props.country && props.country.flag ? props.country.flag : '';
+
   const scale = 1;
   const flagWidth = 3;
   const flagHeight = 2;
