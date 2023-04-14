@@ -55,7 +55,13 @@ const MyPage = () => {
           }}>
 
           <ambientLight intensity={.4} />
+          <mesh
+            scale={1}
+            position={[3, 10, 0]}>
 
+            <boxGeometry args={[20, 1, 10]} />
+            <meshStandardMaterial color={'orange'} />
+          </mesh>
           {countries.map(country => (
             <Suspense key={country.name} fallback={<Html>Loading...</Html>}>
               <CountryCube key={country.name} country={country} totalPopulation={totalPopulation} countries={countries} />

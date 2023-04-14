@@ -25,9 +25,10 @@ function CountryCube(props) {
 
   const largestPopulation = props.countries[0].population;
   const millionsPerMetre = props.totalPopulation / desiredWidth;
-
+  const thisPercentage = props.country.population / props.totalPopulation;
+  console.log('thisPercentage', thisPercentage, ' ', props.country.name)
   return (
-    <mesh name={'mesh' + props.country.name} scale={scaleOfLargest * props.country.population / largestPopulation}
+    <mesh name={'mesh' + props.country.name} scale={1}
       position={[populationPreceeding / millionsPerMetre, 0, 0]}
     >
       <Html
@@ -39,7 +40,7 @@ function CountryCube(props) {
         }}>
         <div className="label">{props.country.name} {(props.country.population / 1000000).toFixed(1)}m </div>
       </Html>
-      <boxGeometry args={[flagWidth, flagHeight, flagWidth]} />
+      <boxGeometry args={[desiredWidth*thisPercentage, desiredWidth*thisPercentage*.66, desiredWidth*thisPercentage]} />
       <meshStandardMaterial attachArray="material" map={map1} />
       <meshBasicMaterial attachArray="material" map={map1} />
       <meshBasicMaterial attachArray="material" color="white" />

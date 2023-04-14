@@ -45,7 +45,7 @@ const MyPage = () => {
         <Canvas
           shadows
           shadowMap
-          camera={{ position: [60, 5, 52], fov: 42 }}
+          camera={{ position: [38, 6, 38], fov: 42 }}
           onCreated={({ gl, camera, scene }) => {
             scene.background = new THREE.Color(0xa2b9e7);
             gl.shadowMap.enabled = true;
@@ -63,7 +63,7 @@ const MyPage = () => {
           ))}
 
           <OrbitControls
-            target={[10, 0, 0]}
+            target={[17, 0, 0]}
             enableDamping
             dampingFactor={0.2}
           />
