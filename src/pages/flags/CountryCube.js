@@ -6,14 +6,14 @@ import { TextureLoader } from "three";
 import "./style.css";
 
 function CountryCube(props) {
-  if (!props.country) return (<></>);
-  if (!props.countries) return (<></>);
 
   const flagUrl = props.country && props.country.flag ? props.country.flag : '';
   const flagWidth = 3;
   const flagHeight = 2;
   const scaleOfLargest = 4;
   const [map1] = useLoader(TextureLoader, [flagUrl]);
+  if (!props.country) return (<></>);
+  if (!props.countries) return (<></>);
 
   const populationPreceeding = props.countries.reduce((total, country) => {
     if (country.index < props.country.index) {
