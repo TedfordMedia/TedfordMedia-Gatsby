@@ -1,12 +1,10 @@
 import Layout from "@components/layoutwidellh";
 import * as THREE from 'three'
 import { css } from '@emotion/core'
-import React, { useState, useEffect, useRef } from 'react';
-import { OrbitControls, Html } from "@react-three/drei";
+import React, { useState, useEffect } from 'react';
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Floor from "@components/basics/flooring/Floor";
 import CountryCube from './CountryCube'
-
 
 
 const MyPage = () => {
@@ -33,14 +31,6 @@ const MyPage = () => {
 
   return (
     <Layout>
-      {/* <div>
-        <h1>List of Countries</h1>
-        <ul>
-          {countries.map(country => (
-            <li key={country.name}>{country.name} {(country.population / 1000000).toFixed(2)}</li>
-          ))}
-        </ul>
-      </div> */}
 
       <div className={'mydiv'}
         css={css` 
@@ -50,7 +40,7 @@ const MyPage = () => {
         <Canvas
           shadows
           shadowMap
-          camera={{ position: [-20, 10, 10], fov: 42 }}
+          camera={{ position: [-2, 2, 10], fov: 42 }}
           onCreated={({ gl, camera, scene }) => {
             scene.background = new THREE.Color(0xa2b9e7);
             gl.shadowMap.enabled = true;
@@ -60,13 +50,11 @@ const MyPage = () => {
           }}>
 
           <ambientLight intensity={.4} />
-          <Floor />
 
           {countries.map(country => (
             <CountryCube key={country.name} country={country} />
           ))}
 
-          {/* <Sky scale={100} sunPosition={[400, 500, -1000]} turbidity={0.1} /> */}
           <OrbitControls
           // enableDamping
           // dampingFactor={0.2}

@@ -23,7 +23,6 @@ function CountryCube(country) {
     setColor(getRandomColor());
   }, []);
   return (
-
     <mesh
       position={[tmpPos, tmpPos, 0]}
     >
